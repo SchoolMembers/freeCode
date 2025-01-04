@@ -38,14 +38,14 @@
         android:orientation="horizontal">
         <ScrollView
             android:id="@+id/navView"
-            android:layout_width="wrap_content"
+            android:layout_width="60dp"
             android:layout_height="match_parent"
             android:scrollbars="none"
             android:fillViewport="true"
             android:visibility="gone">
             <com.google.android.material.navigationrail.NavigationRailView
                 android:id="@+id/navigation"
-                android:layout_width="wrap_content"
+                android:layout_width="60dp"
                 android:layout_height="match_parent"
                 app:menu="@menu/navigation_bar"
                 app:labelVisibilityMode="labeled" />
