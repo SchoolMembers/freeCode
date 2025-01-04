@@ -28,9 +28,17 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         EdgeToEdge.enable(this);
         setContentView(binding.getRoot());
-        ViewCompat.setOnApplyWindowInsetsListener(binding.main, (v, insets) -> {
+        // 상단 인셋 처리
+        ViewCompat.setOnApplyWindowInsetsListener(binding.topBar, (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            v.setPadding(0, systemBars.top, 0, 0);
+            return insets;
+        });
+
+        // 하단 인셋 처리
+        ViewCompat.setOnApplyWindowInsetsListener(binding.mainView, (view, insets) -> {
+            Insets systemBarsInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            view.setPadding(0, 0, 0, systemBarsInsets.bottom);
             return insets;
         });
 

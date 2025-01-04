@@ -7,22 +7,22 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/top_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="5dp"
-        android:paddingTop="5dp"
-        android:paddingEnd="4dp"
-        android:paddingStart="4dp"
-        android:orientation="horizontal">
+        android:minHeight="45dp"
+        android:layout_marginTop="3dp">
         <android.widget.Button
             android:id="@+id/open_navigation"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center"
             android:background="@drawable/menu"
-            android:backgroundTint="?attr/colorSecondary"/>
+            android:backgroundTint="?attr/colorSecondary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
         <android.widget.Button
             android:id="@+id/close_navigation"
             android:layout_width="30dp"
@@ -30,14 +30,31 @@
             android:layout_gravity="center"
             android:background="@drawable/close"
             android:backgroundTint="?attr/colorSecondary"
-            android:visibility="gone"/>
-    </LinearLayout>
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+        <TextView
+            android:id="@+id/app_name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/app_name"
+            android:gravity="center"
+            android:fontFamily="@font/code"
+            android:textSize="23sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
     <LinearLayout
+        android:id="@+id/main_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
         <ScrollView
-            android:id="@+id/navView"
+            android:id="@+id/nav_view"
             android:layout_width="60dp"
             android:layout_height="match_parent"
             android:scrollbars="none"

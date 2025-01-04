@@ -5,6 +5,8 @@
         <item name="colorOnPrimary">@color/gray</item>
         <item name="android:background">@color/white</item>
         <item name="colorSecondary">@color/darkGray</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:fitsSystemWindows">true</item>
     </style>
 
     <style name="Theme.FreeCode" parent="Base.Theme.FreeCode">
