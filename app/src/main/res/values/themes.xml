@@ -1,9 +1,28 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
     <style name="Base.Theme.FreeCode" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- 기본 색상 정의 -->
+        <item name="colorPrimary">@color/gray</item>
+        <item name="colorOnPrimary">@color/gray</item>
+        <item name="android:background">@color/white</item>
+        <item name="colorSecondary">@color/darkGray</item>
     </style>
 
-    <style name="Theme.FreeCode" parent="Base.Theme.FreeCode" />
+    <style name="Theme.FreeCode" parent="Base.Theme.FreeCode">
+        <item name="navigationRailStyle">@style/Widget.App.NavigationRailView</item>
+    </style>
+
+
+    <!-- NavigationRailView 스타일 -->
+    <style name="Widget.App.NavigationRailView" parent="Widget.MaterialComponents.NavigationRailView.Colored">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.NavigationRailView</item>
+        <item name="itemBackground">@android:color/transparent</item>
+        <item name="itemRippleColor">@android:color/transparent</item>
+        <item name="itemPaddingBottom">30dp</item>
+    </style>
+
+    <!-- NavigationRailView 오버레이 -->
+    <style name="ThemeOverlay.App.NavigationRailView" parent="ThemeOverlay.Material3.NavigationRailView">
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorOnPrimary">@color/gray</item>
+    </style>
 </resources>
