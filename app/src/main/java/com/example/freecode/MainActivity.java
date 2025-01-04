@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
             view.setPadding(0, 0, 0, systemBarsInsets.bottom);
             return insets;
         });
+        Log.d("MainActivity", "line 44.. Insets setting completed for MainActivity");
 
         //메뉴 바 열고 닫기 ------------
         Button menuOpenButton = binding.openNavigation;
@@ -54,11 +55,11 @@ public class MainActivity extends AppCompatActivity {
             int navWidth = navView.getWidth();
             navView.setTranslationX(-navWidth);
             navView.setVisibility(View.GONE);
+            Log.d("MainActivity", String.format("line 57.. Navigation rail location set: %d", navView.getWidth()));
         });
 
         // 메뉴 열기
         menuOpenButton.setOnClickListener(v -> {
-            Log.d("custom","" + navView.getWidth());
 
             navView.setVisibility(View.VISIBLE);
 
