@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:enabled="true"
+        android:icon="@drawable/home"
+        android:title="@string/menu_home"/>
+    <item
+        android:id="@+id/run"
+        android:enabled="true"
+        android:icon="@drawable/code"
+        android:title="@string/menu_run"/>
+    <item
+        android:id="@+id/quiz"
+        android:enabled="true"
+        android:icon="@drawable/quiz"
+        android:title="@string/menu_quiz"/>
+    <item
+        android:id="@+id/concept"
+        android:enabled="true"
+        android:icon="@drawable/concept"
+        android:title="@string/menu_concept"/>
+    <item
+    android:id="@+id/comm"
+    android:enabled="true"
+    android:icon="@drawable/community"
+    android:title="@string/menu_comm"/>
+    <item
+        android:id="@+id/setting"
+        android:enabled="true"
+        android:icon="@drawable/setting"
+        android:title="@string/menu_set"/>
+
+</menu>

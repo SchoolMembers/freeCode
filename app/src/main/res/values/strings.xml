@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">FreeCode</string>
+    <string name="menu_home">학습</string>
+    <string name="menu_run">파이썬</string>
+    <string name="menu_quiz">퀴즈</string>
+    <string name="menu_concept">개념서</string>
+    <string name="menu_comm">커뮤니티</string>
+    <string name="menu_set">설정</string>
 </resources>

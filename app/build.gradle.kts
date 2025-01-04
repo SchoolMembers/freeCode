@@ -5,9 +5,10 @@ plugins {
 android {
     namespace = "com.example.freecode"
     compileSdk = 34
+    viewBinding.isEnabled = true
 
     defaultConfig {
-        applicationId = "com.example.freecode"
+        applicationId = "com.code.freecode"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -28,6 +29,10 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
+    }
+
+    buildFeatures {
+        viewBinding = true
     }
 }
 
