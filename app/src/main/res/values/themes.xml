@@ -26,5 +26,6 @@
     <style name="ThemeOverlay.App.NavigationRailView" parent="ThemeOverlay.Material3.NavigationRailView">
         <item name="colorPrimary">@color/white</item>
         <item name="colorOnPrimary">@color/gray</item>
+        <item name="fontFamily">@font/bold</item>
     </style>
 </resources>
