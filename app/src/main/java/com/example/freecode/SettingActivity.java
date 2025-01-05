@@ -1,36 +1,29 @@
 package com.example.freecode;
 
 import android.animation.ObjectAnimator;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.ScrollView;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
-import com.example.freecode.databinding.ActivityMainBinding;
+import com.example.freecode.databinding.ActivitySettingBinding;
 import com.example.freecode.methodClass.NvgListener;
 import com.google.android.material.navigation.NavigationBarView;
 
-public class MainActivity extends AppCompatActivity {
+public class SettingActivity extends AppCompatActivity {
+    private ActivitySettingBinding binding;
 
-    private ActivityMainBinding binding;
-
-    //checkInit 값이 0일 때는 menu gone, 1일 때는 visible
-    public static int checkInit = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        binding = ActivitySettingBinding.inflate(getLayoutInflater());
         EdgeToEdge.enable(this);
         setContentView(binding.getRoot());
         // 상단 인셋 처리
@@ -46,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             view.setPadding(0, 0, 0, systemBarsInsets.bottom);
             return insets;
         });
-        Log.d("MainActivity", "Insets setting completed for MainActivity");
+        Log.d("SettingActivity", "Insets setting completed for SettingActivity");
 
         //메뉴 바 열고 닫기 ------------
         Button menuOpenButton = binding.openNavigation;
@@ -54,20 +47,6 @@ public class MainActivity extends AppCompatActivity {
         ScrollView navView = binding.navView;
         NavigationBarView navRail = binding.navigation; //네비게이션 레일
 
-        //초기 위치 세팅
-        if (checkInit == 0) {
-            navView.setVisibility(View.INVISIBLE);
-            navView.post(() -> {
-                int navWidth = navView.getWidth();
-                navView.setTranslationX(-navWidth);
-                navView.setVisibility(View.GONE);
-                Log.d("MainActivity", String.format("Navigation rail location set: %d", navView.getWidth()));
-            });
-        } else {
-            navView.setVisibility(View.VISIBLE);
-            menuOpenButton.setVisibility(View.GONE);
-            menuCloseButton.setVisibility(View.VISIBLE);
-        }
 
         // 메뉴 열기
         menuOpenButton.setOnClickListener(v -> {
@@ -98,12 +77,9 @@ public class MainActivity extends AppCompatActivity {
 
             menuOpenButton.setVisibility(View.VISIBLE);
             menuCloseButton.setVisibility(View.GONE);
-            checkInit = 0;
-            Log.d("MainActivity", "checkInit 0");
         });
 
         // 메뉴 바 아이템 선택 리스너 설정
         navRail.setOnItemSelectedListener(item -> NvgListener.itemSelected(this, item.getItemId()));
-
     }
 }
