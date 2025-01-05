@@ -47,6 +47,8 @@ public class SettingActivity extends AppCompatActivity {
         ScrollView navView = binding.navView;
         NavigationBarView navRail = binding.navigation; //네비게이션 레일
 
+        navRail.setSelectedItemId(R.id.setting);
+
 
         // 메뉴 열기
         menuOpenButton.setOnClickListener(v -> {
