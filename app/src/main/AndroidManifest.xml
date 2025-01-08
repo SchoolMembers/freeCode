@@ -24,6 +24,12 @@
         <activity
             android:name=".SettingActivity"
             android:exported="false"/>
+        <activity
+            android:name=".KingNoobActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".Noob1Activity"
+            android:exported="false"/>
     </application>
 
 </manifest>
