@@ -12,8 +12,14 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.viewpager2.widget.ViewPager2;
 import com.example.freecode.adapter.KingNoobViewPagerAdapter;
 import com.example.freecode.databinding.ActivityKingnoobBinding;
+import com.example.freecode.methodClass.LastPageInfo;
+
 
 public class KingNoobActivity extends AppCompatActivity {
+
+    ViewPager2 viewPager;
+    KingNoobViewPagerAdapter adapter;
+    LastPageInfo lastPageInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,10 +42,15 @@ public class KingNoobActivity extends AppCompatActivity {
         });
         Log.d("KingNoobActivity", "Insets setting completed for KingNoobActivity");
 
+        lastPageInfo = new LastPageInfo();
+        int lastPage = lastPageInfo.getLastPage(this, "King");
+
         //viewpager 설정
-        ViewPager2 viewPager = binding.viewPager;
-        KingNoobViewPagerAdapter adapter = new KingNoobViewPagerAdapter(this);
+        viewPager = binding.viewPager;
+        adapter = new KingNoobViewPagerAdapter(this);
         viewPager.setAdapter(adapter);
+        viewPager.setCurrentItem(lastPage, false);
+        viewPager.setUserInputEnabled(false);
 
         //뒤로가기 버튼 (시스템)
         getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
@@ -61,5 +72,21 @@ public class KingNoobActivity extends AppCompatActivity {
             finish();
         });
 
+    }
+
+    // 다음 페이지로 이동 메서드
+    public void moveToNextPage() {
+        int currentItem = viewPager.getCurrentItem();
+        if (currentItem + 1 < adapter.getItemCount()) {
+            viewPager.setCurrentItem(currentItem + 1, true);
+        }
+    }
+
+    // 이전 페이지로 이동 메서드
+    public void moveToBeforePage() {
+        int currentItem = viewPager.getCurrentItem();
+        if (currentItem -1 >= 0) {
+            viewPager.setCurrentItem(currentItem - 1, true);
+        }
     }
 }

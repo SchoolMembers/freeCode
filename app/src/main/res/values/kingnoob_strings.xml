@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="king_page1_title">Welcome FreeCode !</string>
+    <string name="king_page1_des1">
+        FreeCode 앱 설치, 어떤 목표를 위해 하셨나요?
+        \n\n\n저희 FreeCode 개발진의 목표는 이렇습니다!
+        \n\n&lt;사용자들을 위한 목표 리스트&gt;
+    </string>
+    <string name="king_page1_des2">* 목표1\n\n* 목표2\n\n* 목표3</string>
+    <string name="king_page1_des3">: \n\n: \n\n: </string>
+    <string name="king_page1_des4">
+        문제 해결 능력 키우기
+        \n\n파이썬 학습하기
+        \n\n프로그래밍 언어 습득을 통한 컴퓨팅 사고 능력 기르기</string>
+    <string name="king_page1_des5">
+        개념을 차근차근 이해해가며 함께 학습해요~
+        \nFreeCode와 함께라면 누구나 쉽게 따라올 수 있어요!
+        \n\n챕터 중간에 퀴즈가 몇 개 포함될 수 있지만, 메뉴의 퀴즈 옵션을 이용한다면 더 많은 퀴즈들을 만나볼 수 있어요!
+        \n\n만약, FreeCode 앱을 사용하는 데 어려움을 겪고 있다면, 설정 메뉴의 도움말을 확인해 보세요!
+    </string>
+    <string name="king_page1_des6">컴퓨팅 사고(computational thinking)란?</string>
+    <string name="king_page1_des7">
+        사람이나 기계가 복잡한 문제를 해결할 수 있도록 문제를 이해하고, 해결 방법을 찾아내는 기술을 익히는 것
+    </string>
+</resources>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 눌렸을 때 -->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="?attr/android:background" /> <!-- 눌렸을 때 배경색 -->
+            <corners android:radius="8dp" />
+            <stroke
+                android:width="1.5dp"
+                android:color="?attr/colorOnPrimary"/>
+        </shape>
+    </item>
+
+    <!-- 비활성화 상태 -->
+    <item android:state_enabled="false">
+        <shape android:shape="rectangle">
+            <solid android:color="?attr/android:background" /> <!-- 비활성화 상태 배경색 -->
+            <corners android:radius="8dp" />
+            <stroke
+                android:width="1.5dp"
+                android:color="?attr/colorOnPrimary"/>
+        </shape>
+    </item>
+
+    <!-- 기본 상태 -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="?attr/android:background" /> <!-- 기본 배경색 -->
+            <corners android:radius="8dp" />
+            <stroke
+                android:width="1.5dp"
+                android:color="?attr/colorOnPrimary"/>
+        </shape>
+    </item>
+</selector>
