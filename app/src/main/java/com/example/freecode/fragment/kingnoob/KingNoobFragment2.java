@@ -2,11 +2,6 @@ package com.example.freecode.fragment.kingnoob;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.text.Spannable;
-import android.text.SpannableString;
-import android.text.style.BackgroundColorSpan;
-import android.text.style.ForegroundColorSpan;
-import android.text.style.RelativeSizeSpan;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +16,7 @@ import com.example.freecode.KingNoobActivity;
 import com.example.freecode.R;
 import com.example.freecode.methodClass.DialogInfo;
 import com.example.freecode.methodClass.LastPageInfo;
+import com.example.freecode.methodClass.TextCustom;
 
 public class KingNoobFragment2 extends Fragment {
     // Page 1
@@ -98,7 +94,6 @@ public class KingNoobFragment2 extends Fragment {
         beforeButton.setOnClickListener(v -> activity.moveToBeforePage());
 
         //텍스트 강조 세팅
-        int start, end;
         TextView des1 = view.findViewById(R.id.des1);
         TextView des2 = view.findViewById(R.id.des2);
         TextView des3 = view.findViewById(R.id.des3);
@@ -107,92 +102,48 @@ public class KingNoobFragment2 extends Fragment {
         String text2 = des2.getText().toString();
         String text3 = des3.getText().toString();
 
-        SpannableString span = new SpannableString(text1);
-        String word = "프로그래밍";
-        start = text1.indexOf(word);
-        if (start >= 0) {
-            end = start + word.length();
-            span.setSpan(new BackgroundColorSpan(ContextCompat.getColor(context, R.color.lightYellow)), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            span.setSpan(new RelativeSizeSpan(1.1f), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            des1.setText(span);
-        }
+        TextCustom textCustom = new TextCustom(des1, text1);
+        textCustom.setPiece("프로그래밍");
+        textCustom.background(ContextCompat.getColor(context, R.color.lightYellow));
+        textCustom.size(1.1f);
+        textCustom.setting();
 
-        span = new SpannableString(text2);
-        start = text2.indexOf(word);
-        if (start >= 0) {
-            end = start + word.length();
-            span.setSpan(new ForegroundColorSpan(ContextCompat.getColor(context, R.color.hotPink)), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        }
-        word = "컴퓨터에게 일을 시키기 위한 설계도를 만드는 작업";
-        start = text2.indexOf(word);
-        if (start >= 0) {
-            end = start + word.length();
-            span.setSpan(new RelativeSizeSpan(1.1f), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        }
-        des2.setText(span);
+        textCustom = new TextCustom(des2, text2);
+        textCustom.setPiece("프로그래밍");
+        textCustom.textColor(ContextCompat.getColor(context, R.color.hotPink));
+        textCustom.setPiece("컴퓨터에게 일을 시키기 위한 설계도를 만드는 작업");
+        textCustom.size(1.1f);
+        textCustom.setting();
 
-        span = new SpannableString(text3);
-        word = "자연어";
-        start = text3.indexOf(word);
-        if (start >= 0) {
-            end = start + word.length();
-            span.setSpan(new RelativeSizeSpan(1.1f), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            span.setSpan(new ForegroundColorSpan(ContextCompat.getColor(context, R.color.lightPurple)), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        }
-        word = "기계어";
-        start = text3.indexOf(word);
-        if (start >= 0) {
-            end = start + word.length();
-            span.setSpan(new RelativeSizeSpan(1.1f), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            span.setSpan(new ForegroundColorSpan(ContextCompat.getColor(context, R.color.lightPurple)), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        }
-        word = "Python";
-        start = text3.indexOf(word);
-        while (start >= 0) {
-            end = start + word.length();
-            span.setSpan(new ForegroundColorSpan(ContextCompat.getColor(context, R.color.blue)), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            start = text3.indexOf(word, end);
-        }
-        word = "프로그래밍 언어";
-        start = text3.indexOf(word);
-        while (start >= 0) {
-            end = start + word.length();
-            span.setSpan(new ForegroundColorSpan(ContextCompat.getColor(context, R.color.green)), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            start = text3.indexOf(word, end);
-        }
-        des3.setText(span);
+        textCustom = new TextCustom(des3, text3);
+        textCustom.setPiece("자연어");
+        textCustom.size(1.1f);
+        textCustom.textColor(ContextCompat.getColor(context, R.color.lightPurple));
+        textCustom.setPiece("기계어");
+        textCustom.size(1.1f);
+        textCustom.textColor(ContextCompat.getColor(context, R.color.lightPurple));
+        textCustom.setPiece("Python");
+        textCustom.textColorAll(ContextCompat.getColor(context, R.color.blue));
+        textCustom.setPiece("프로그래밍 언어");
+        textCustom.textColorAll(ContextCompat.getColor(context, R.color.green));
+        textCustom.setting();
 
         // info 다이얼로그
         Button infoButton = view.findViewById(R.id.info);
         infoButton.setOnClickListener(v -> {
             DialogInfo dialog = new DialogInfo(context);
             String text = context.getString(R.string.king_page2_dialog);
-            SpannableString spannableString = new SpannableString(text);
 
-            String textPiece = "프로그래밍과 코딩의 차이?";
-            int startIndex = text.indexOf(textPiece);
-            int endIndex;
-            if (startIndex >= 0) {
-                endIndex = startIndex + textPiece.length();
-                spannableString.setSpan(new RelativeSizeSpan(1.1f), startIndex, endIndex, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            }
+            TextCustom dialogText = new TextCustom(text);
 
-            textPiece = "프로그래밍";
-            startIndex = text.indexOf(textPiece);
-            while (startIndex >= 0) {
-                endIndex = startIndex + textPiece.length();
-                spannableString.setSpan(new ForegroundColorSpan(ContextCompat.getColor(context, R.color.darkPurple)), startIndex, endIndex, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                startIndex = text.indexOf(textPiece, endIndex);
-            }
+            dialogText.setPiece("프로그래밍과 코딩의 차이?");
+            dialogText.size(1.1f);
+            dialogText.setPiece("프로그래밍");
+            dialogText.textColorAll(ContextCompat.getColor(context, R.color.darkPurple));
+            dialogText.setPiece("코딩");
+            dialogText.textColorAll(ContextCompat.getColor(context, R.color.lightPurple));
 
-            textPiece = "코딩";
-            startIndex = text.indexOf(textPiece);
-            while (startIndex >= 0) {
-                endIndex = startIndex + textPiece.length();
-                spannableString.setSpan(new ForegroundColorSpan(ContextCompat.getColor(context, R.color.lightPurple)), startIndex, endIndex, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                startIndex = text.indexOf(textPiece, endIndex);
-            }
-            dialog.setText(spannableString, 1);
+            dialog.setText(dialogText.getSpan(), 1);
             dialog.show();
             Log.d("Fragment", "KingNoobFragment2 info dialog show");
         });
