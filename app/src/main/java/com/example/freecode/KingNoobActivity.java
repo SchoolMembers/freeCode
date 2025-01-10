@@ -42,6 +42,7 @@ public class KingNoobActivity extends AppCompatActivity {
         });
         Log.d("KingNoobActivity", "Insets setting completed for KingNoobActivity");
 
+        //진행도 저장 객체
         lastPageInfo = new LastPageInfo();
         int lastPage = lastPageInfo.getLastPage(this, "King");
 
@@ -50,7 +51,7 @@ public class KingNoobActivity extends AppCompatActivity {
         adapter = new KingNoobViewPagerAdapter(this);
         viewPager.setAdapter(adapter);
         viewPager.setCurrentItem(lastPage, false);
-        viewPager.setUserInputEnabled(false);
+        viewPager.setUserInputEnabled(false); // 뷰 페이지 스크롤로 넘기기 비활
 
         //뒤로가기 버튼 (시스템)
         getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {

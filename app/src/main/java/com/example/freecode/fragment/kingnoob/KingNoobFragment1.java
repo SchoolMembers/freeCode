@@ -15,6 +15,7 @@ import com.example.freecode.R;
 import com.example.freecode.methodClass.LastPageInfo;
 
 public class KingNoobFragment1 extends Fragment {
+    // Page 0
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -25,10 +26,11 @@ public class KingNoobFragment1 extends Fragment {
 
         //클리어 챕터인지 아닌지 확인
         LastPageInfo lastPage = new LastPageInfo();
-        boolean checkLast = lastPage.getLastPage(context, "King") <= 0;
+        boolean checkLast = lastPage.getLastPage(context, "King") <= 0; // 0 이하면 true
 
         if (checkLast) {
             lastPage.setLastPage(context, "King", 0);
+            Log.d("KingNoobActivity", "KingNoobFragment1 set lastPage : 0");
         }
 
         KingNoobActivity activity = (KingNoobActivity) requireActivity();
@@ -39,7 +41,7 @@ public class KingNoobFragment1 extends Fragment {
 
         if (checkLast) {
             Log.d("Fragment", "KingNoobFragment1 checkLast true");
-            anim.setDuration(5000);
+            anim.setDuration(5000); // 5초
             nextButton.setEnabled(false);
 
             // 애니메이션 리스너
@@ -53,7 +55,7 @@ public class KingNoobFragment1 extends Fragment {
                 public void onAnimationEnd(Animation animation) {
                     // 애니메이션 종료 시
                     nextButton.setEnabled(true);
-                    Log.d("Fragment", "nextButton visible");
+                    Log.d("Fragment", "KingNoobFragment1 nextButton visible, enabled true");
                 }
 
                 @Override
@@ -68,17 +70,16 @@ public class KingNoobFragment1 extends Fragment {
 
         //다음 버튼 리스너
         nextButton.setOnClickListener(v -> {
-//            activity.allowNextPage(1);
             activity.moveToNextPage();
+            // 현재 페이지가 현재 진행도의 마지막 페이지일 때
             if (lastPage.getLastPage(context, "King") < 1) {
                 lastPage.setLastPage(context, "King", 1);
-                Log.d("KingNoobActivity", "set lastPage " + 1);
+                Log.d("KingNoobActivity", "KingNoobFragment1 set lastPage : 1");
             }
         });
 
         return view;
     }
-
     @Override
     public void onDestroyView() {
         super.onDestroyView();
