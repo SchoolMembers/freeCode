@@ -85,21 +85,44 @@
                     android:inputType="textMultiLine"
                     android:background="@android:color/darker_gray" />
 
-                <Button
-                    android:id="@+id/runButton"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Run Code"
-                    android:layout_marginTop="10dp" />
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+                    <android.widget.Button
+                        android:id="@+id/runButton"
+                        android:layout_width="80dp"
+                        android:layout_height="35dp"
+                        android:fontFamily="@font/simple"
+                        android:textStyle="bold"
+                        android:text="Run"
+                        android:textSize="15sp"
+                        android:background="@drawable/button_background1"
+                        android:gravity="center"/>
+                    <android.widget.Button
+                        android:id="@+id/info"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/info"
+                        android:backgroundTint="?attr/colorOnPrimary"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center"/>
+                </LinearLayout>
+
+
 
                 <TextView
                     android:id="@+id/outputView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/button_background1"
                     android:text="Output will appear here"
                     android:textColor="@android:color/black"
-                    android:background="@android:color/white"
                     android:padding="10dp" />
 
 

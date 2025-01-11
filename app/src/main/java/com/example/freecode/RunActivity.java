@@ -18,7 +18,9 @@ import com.chaquo.python.PyObject;
 import com.chaquo.python.Python;
 import com.chaquo.python.android.AndroidPlatform;
 import com.example.freecode.databinding.ActivityRunBinding;
+import com.example.freecode.methodClass.DialogInfo;
 import com.example.freecode.methodClass.NvgListener;
+import com.example.freecode.methodClass.TextCustom;
 import com.google.android.material.navigation.NavigationBarView;
 
 
@@ -116,6 +118,18 @@ public class RunActivity  extends AppCompatActivity {
             } else {
                 outputView.setText(ContextCompat.getString(this, R.string.emtpy_code));
             }
+        });
+
+        // info 다이얼로그
+        Button infoButton = binding.info;
+        infoButton.setOnClickListener(v -> {
+            DialogInfo dialog = new DialogInfo(this);
+            String text = this.getString(R.string.run_info);
+
+            dialog.setText(text, 1);
+
+            dialog.show();
+            Log.d("RunActivity", "RunActivity info dialog show");
         });
     }
 }
