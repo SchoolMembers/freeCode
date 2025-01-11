@@ -138,6 +138,10 @@ public class RunActivity  extends AppCompatActivity {
         textCustom.size(1.2f);
         textCustom.setPiece("FreeCode");
         textCustom.textColorAll(ContextCompat.getColor(this, R.color.violet));
+        textCustom.setPiece("math.pi");
+        textCustom.background(ContextCompat.getColor(this, R.color.lightGray));
+        textCustom.setPiece("import math");
+        textCustom.background(ContextCompat.getColor(this, R.color.lightGray));
         textCustom.setting();
 
 
