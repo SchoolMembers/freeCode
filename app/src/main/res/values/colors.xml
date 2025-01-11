@@ -5,6 +5,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#7A7A7A</color>
     <color name="darkGray">#515151</color>
+    <color name="lightGray">#BEBEBE</color>
 
     <!-- 빨강 계열 -->
     <color name="red">#FFFF0000</color>
