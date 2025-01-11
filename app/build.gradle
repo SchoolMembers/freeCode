@@ -1,11 +1,14 @@
 plugins {
     alias(libs.plugins.android.application)
+    id("com.chaquo.python")
 }
 
 android {
     namespace = "com.example.freecode"
     compileSdk = 34
-    viewBinding.isEnabled = true
+    viewBinding {
+        enabled = true
+    }
 
     defaultConfig {
         applicationId = "com.code.freecode"
@@ -15,24 +18,37 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            abiFilters "arm64-v8a", "x86_64", "x86_64"
+        }
+
+        python {
+            version "3.8"
+        }
+
+        sourceSets {
+            main {
+                python.srcDir "src/main/python"
+            }
+        }
+
+
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 
     buildFeatures {
-        viewBinding = true
+        viewBinding true
     }
 }
 

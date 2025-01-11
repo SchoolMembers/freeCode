@@ -30,6 +30,9 @@
         <activity
             android:name=".Noob1Activity"
             android:exported="false"/>
+        <activity
+            android:name=".RunActivity"
+            android:exported="false"/>
     </application>
 
 </manifest>

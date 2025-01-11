@@ -1,15 +1,12 @@
 package com.example.freecode.methodClass;
 
-import static androidx.core.content.ContextCompat.startActivity;
-
 import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
-import android.widget.Toast;
-
 import com.example.freecode.MainActivity;
 import com.example.freecode.R;
+import com.example.freecode.RunActivity;
 import com.example.freecode.SettingActivity;
 
 public class NvgListener {
@@ -23,6 +20,8 @@ public class NvgListener {
             Log.d("MainActivity", "checkInit 1");
             return true;
         } else if (itemId == R.id.run) {
+            intent = new Intent(context, RunActivity.class);
+            start(context, intent);
             return true;
         } else if (itemId == R.id.quiz) {
             return true;
