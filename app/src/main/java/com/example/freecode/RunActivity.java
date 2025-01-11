@@ -28,6 +28,8 @@ public class RunActivity  extends AppCompatActivity {
 
     private ActivityRunBinding binding;
 
+    private int checkOpen = 0; //0은 오픈x, 1은 오픈 상태
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,16 +122,35 @@ public class RunActivity  extends AppCompatActivity {
             }
         });
 
-        // info 다이얼로그
-        Button infoButton = binding.info;
-        infoButton.setOnClickListener(v -> {
-            DialogInfo dialog = new DialogInfo(this);
-            String text = this.getString(R.string.run_info);
+        //제한된 기능 보기
+        TextView info = binding.info;
+        TextView infoDes = binding.infoDes;
 
-            dialog.setText(text, 1);
+        TextCustom textCustom = new TextCustom(infoDes, ContextCompat.getString(this, R.string.run_info));
 
-            dialog.show();
-            Log.d("RunActivity", "RunActivity info dialog show");
+        textCustom.setPiece("과부하 방지 및 보안 제한");
+        textCustom.background(ContextCompat.getColor(this, R.color.lightYellow));
+        textCustom.setPiece("FreeCode에서 제공하는 Python 기능");
+        textCustom.background(ContextCompat.getColor(this, R.color.lightYellow));
+        textCustom.setPiece("3초");
+        textCustom.size(1.2f);
+        textCustom.setPiece("input()");
+        textCustom.size(1.2f);
+        textCustom.setPiece("FreeCode");
+        textCustom.textColorAll(ContextCompat.getColor(this, R.color.violet));
+        textCustom.setting();
+
+
+        info.setOnClickListener(v -> {
+            if (checkOpen == 0) {
+                checkOpen = 1;
+                info.setText(ContextCompat.getString(this, R.string.close_info));
+                infoDes.setVisibility(View.VISIBLE);
+            } else {
+                checkOpen = 0;
+                info.setText(ContextCompat.getString(this, R.string.open_info));
+                infoDes.setVisibility(View.GONE);
+            }
         });
     }
 }

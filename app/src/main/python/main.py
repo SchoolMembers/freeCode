@@ -57,7 +57,6 @@ def eval(code):
         "dict": dict,
         "set": set,
         "list": list,
-        "input":input,
         "tuple": tuple,
         "bool": bool,
         "zip": zip,

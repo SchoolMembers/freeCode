@@ -43,5 +43,27 @@
     <string name="emtpy_code">코드가 입력되지 않았습니다</string>
 
     <!--RunActivity-->
-    <string name="run_info">d</string>
+    <string name="open_info">▶  제한된 기능 보기</string>
+    <string name="close_info">▼  제한된 기능 보기</string>
+    <string name="run_info">
+        보안 문제 및 과부하 방지를 위해 FreeCode에서는 Python의 모든 기능을 제공하지 않습니다.
+
+        \n\n\n📌 과부하 방지 및 보안 제한
+        \n* 코드 실행 시간이 3초를 초과할 경우 강제 중단됩니다.
+        \n* input() 함수는 사용할 수 없습니다.
+
+        \n\n\n📌 FreeCode에서 제공하는 Python 기능
+
+
+        \n\n&lt; 내장 함수 &gt;
+
+        \nprint(), len(), range(), sum(), abs(), round(), all(), any(), sorted(),
+        min(), max(), int(), float(), str(), dict(), set(), list(), tuple(), bool(), zip(),
+        enumerate(), pow(), reversed(), filter(), map(), divmod(), chr(), ord(),
+        hex(), bin(), oct()
+
+        \n\n&lt; math 라이브러리 &gt;
+        \nsqrt(), sin(), cos(), tan(), pi(), e(), log(), exp(), ceil(),
+        floor(), fabs(), pow()
+    </string>
 </resources>

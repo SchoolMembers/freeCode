@@ -76,6 +76,26 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:padding="10dp">
+                <TextView
+                    android:id="@+id/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="@string/open_info"
+                    android:gravity="center"
+                    android:fontFamily="@font/bold"
+                    android:textSize="13sp"
+                    android:layout_marginBottom="10dp"/>
+                <TextView
+                    android:id="@+id/info_des"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/run_info"
+                    android:fontFamily="@font/simple"
+                    android:textStyle="bold"
+                    android:textSize="13sp"
+                    android:layout_marginBottom="10dp"
+                    android:padding="5dp"
+                    android:visibility="gone"/>
                 <EditText
                     android:id="@+id/codeInput"
                     android:layout_width="match_parent"
@@ -85,32 +105,18 @@
                     android:inputType="textMultiLine"
                     android:background="@android:color/darker_gray" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    android:orientation="horizontal"
-                    android:gravity="center">
-                    <android.widget.Button
-                        android:id="@+id/runButton"
-                        android:layout_width="80dp"
-                        android:layout_height="35dp"
-                        android:fontFamily="@font/simple"
-                        android:textStyle="bold"
-                        android:text="Run"
-                        android:textSize="15sp"
-                        android:background="@drawable/button_background1"
-                        android:gravity="center"/>
-                    <android.widget.Button
-                        android:id="@+id/info"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:background="@drawable/info"
-                        android:backgroundTint="?attr/colorOnPrimary"
-                        android:layout_marginStart="5dp"
-                        android:gravity="center"/>
-                </LinearLayout>
+                <android.widget.Button
+                    android:id="@+id/runButton"
+                    android:layout_width="80dp"
+                    android:layout_height="35dp"
+                    android:fontFamily="@font/simple"
+                    android:textStyle="bold"
+                    android:text="Run"
+                    android:textSize="15sp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/button_background1"
+                    android:layout_gravity="center"
+                    android:gravity="center"/>
 
 
 
@@ -121,7 +127,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
                     android:background="@drawable/button_background1"
-                    android:text="Output will appear here"
+                    android:text="Output"
                     android:textColor="@android:color/black"
                     android:padding="10dp" />
 
