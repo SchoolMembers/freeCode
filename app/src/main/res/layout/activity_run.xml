@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="45dp"
+        android:layout_marginTop="3dp">
+        <android.widget.Button
+            android:id="@+id/open_navigation"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:background="@drawable/menu"
+            android:backgroundTint="?attr/colorSecondary"
+
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+        <android.widget.Button
+            android:id="@+id/close_navigation"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:background="@drawable/close"
+            android:backgroundTint="?attr/colorSecondary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+        <TextView
+            android:id="@+id/app_name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/app_name"
+            android:gravity="center"
+            android:fontFamily="@font/code"
+            android:textSize="23sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/main_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <ScrollView
+            android:id="@+id/nav_view"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            android:fillViewport="true">
+            <com.google.android.material.navigationrail.NavigationRailView
+                android:id="@+id/navigation"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                app:menu="@menu/navigation_bar"
+                app:labelVisibilityMode="labeled" />
+        </ScrollView>
+        <!--여기부터 코딩-->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            android:fillViewport="true">
+            <LinearLayout
+                android:id="@+id/set_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="10dp">
+                <TextView
+                    android:id="@+id/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="@string/open_info"
+                    android:gravity="center"
+                    android:fontFamily="@font/bold"
+                    android:textSize="13sp"
+                    android:layout_marginBottom="10dp"/>
+                <TextView
+                    android:id="@+id/info_des"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/run_info"
+                    android:fontFamily="@font/simple"
+                    android:textStyle="bold"
+                    android:textSize="13sp"
+                    android:layout_marginBottom="10dp"
+                    android:padding="5dp"
+                    android:visibility="gone"/>
+                <EditText
+                    android:id="@+id/codeInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:hint="Enter Python code here"
+                    android:gravity="start|top"
+                    android:inputType="textMultiLine"
+                    android:background="@android:color/darker_gray" />
+
+                <android.widget.Button
+                    android:id="@+id/runButton"
+                    android:layout_width="80dp"
+                    android:layout_height="35dp"
+                    android:fontFamily="@font/simple"
+                    android:textStyle="bold"
+                    android:text="Run"
+                    android:textSize="15sp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/button_background1"
+                    android:layout_gravity="center"
+                    android:gravity="center"/>
+
+
+
+                <TextView
+                    android:id="@+id/outputView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/button_background1"
+                    android:text="Output"
+                    android:textColor="@android:color/black"
+                    android:padding="10dp" />
+
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+
+</LinearLayout>
