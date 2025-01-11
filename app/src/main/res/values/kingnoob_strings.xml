@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="king_page1_title">Welcome FreeCode !</string>
+    <string name="king_page1_des1">
+        FreeCode 앱 설치, 어떤 목표를 위해 하셨나요?
+        \n\n\n저희 FreeCode 개발진의 목표는 이렇습니다!
+        \n\n&lt;사용자들을 위한 목표 리스트&gt;
+    </string>
+    <string name="king_page1_des2">* 목표1\n\n* 목표2\n\n* 목표3</string>
+    <string name="king_page1_des3">: \n\n: \n\n: </string>
+    <string name="king_page1_des4">
+        문제 해결 능력 키우기
+        \n\n파이썬 학습하기
+        \n\n프로그래밍 언어 습득을 통한 컴퓨팅 사고 능력 기르기</string>
+    <string name="king_page1_des5">
+        개념을 차근차근 이해해가며 함께 학습해요~
+        \nFreeCode와 함께라면 누구나 쉽게 따라올 수 있어요!
+        \n\n챕터 중간에 퀴즈가 몇 개 포함될 수 있지만, 메뉴의 퀴즈 옵션을 이용한다면 더 많은 퀴즈들을 만나볼 수 있어요!
+        \n\n만약, FreeCode 앱을 사용하는 데 어려움을 겪고 있다면, 설정 메뉴의 도움말을 확인해 보세요!
+    </string>
+    <string name="king_page1_des6">컴퓨팅 사고(computational thinking)란?</string>
+    <string name="king_page1_des7">
+        사람이나 기계가 복잡한 문제를 해결할 수 있도록 문제를 이해하고, 해결 방법을 찾아내는 기술을 익히는 것
+    </string>
+
+    <string name="king_page2_title">기본 개념 이해하기</string>
+    <string name="king_page2_des1">프로그래밍이 무엇인지 알고 있나요?</string>
+    <string name="king_page2_des2">
+        프로그래밍이란, 우리가 원하는 프로그램(앱, 게임 등)을 만들기 위해선 컴퓨터에게 어떤 일을 하라는 지시를 하는 과정이에요.
+        \n\n쉽게 말해, 컴퓨터에게 일을 시키기 위한 설계도를 만드는 작업이라고 생각할 수 있어요!
+    </string>
+    <string name="king_page2_des3">
+        \n컴퓨터는 사람의 말을 이해할 수 있을까요?
+        \n\n우리가 평소에 사용하는 언어인 자연어(한국어, 영어 등)는 물론이고 10, 20, 30과 같은 10진수 숫자도 알아들을 수 없어요.
+        \n\n컴퓨터는 0과 1로 이루어진 기계어(2진수, 00011001)만을 이해할 수 있기 때문에, 사람과 컴퓨터 사이의 번역기 역할을 하는 도구가 필요해요. 그 도구가 바로 프로그래밍 언어랍니다!
+        \n\n프로그래밍 언어는 컴퓨터의 언어인 2진수보다 인간이 다루기 훨씬 더 쉬워요.
+        \n\n프로그래밍 언어에는 앞으로 배우기 시작할 Python도 포함되고, 그 밖에도 Java, C 등 다양한 언어가 포함되어 있어요!
+        \n\nPython은 많은 프로그래밍 언어 중 매우 쉽다고 알려진 언어예요. 접근이 쉬운 Python을 배우며 프로그래밍에 대한 이해도를 높이는 게 목표예요!
+    </string>
+    <string name="king_page2_image">컴퓨터와 사람 소통</string>
+    <string name="king_page2_dialog">
+        프로그래밍과 코딩의 차이?
+        \n\n코딩이라는 말을 한 번쯤은 들어 봤을 거예요.
+        \n\n많은 초보들은 프로그래밍과 코딩을 같다고 생각할 거예요!
+        \n\n* 프로그래밍: 프로그램을 작성하는 모든 과정을 포함해요. 즉, 프로그램 설계, 코딩(코드 작성), 에러 수정 등 전체적인 흐름을 다루는 작업이에요.
+        \n\n* 코딩: 코드를 작성하는 것만을 의미해요. 쉽게 말해, 사람이 이해할 수 있는 자연어를 컴퓨터가 이해할 수 있는 기계어로 바꾸는 것을 말해요.
+        \n\n\n둘을 혼동해서 사용하지 않도록 프로그래밍은 더 큰 범위의 개념이고, 코딩은 그 일부라는 점을 기억하도록 해요!
+    </string>
+</resources>

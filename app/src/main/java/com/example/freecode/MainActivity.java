@@ -1,14 +1,13 @@
 package com.example.freecode;
 
 import android.animation.ObjectAnimator;
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.ScrollView;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,7 +17,11 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.freecode.databinding.ActivityMainBinding;
 import com.example.freecode.methodClass.NvgListener;
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.navigation.NavigationBarView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
 
     //checkInit 값이 0일 때는 menu gone, 1일 때는 visible
     public static int checkInit = 0;
+
+    private List<MaterialCardView> cardViews = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,5 +110,34 @@ public class MainActivity extends AppCompatActivity {
         // 메뉴 바 아이템 선택 리스너 설정
         navRail.setOnItemSelectedListener(item -> NvgListener.itemSelected(this, item.getItemId()));
 
+        //챕터 선택
+        cardViews.add(binding.kingNoob);
+        cardViews.add(binding.noob1);
+
+        for (int i = 0; i < cardViews.size(); i++) {
+            int index = i;
+            cardViews.get(i).setOnClickListener(v -> {
+                handleCardClick(index);
+            });
+        }
+
+    }
+
+    private void handleCardClick(int index) {
+        Intent intent;
+        ActivityOptions options = ActivityOptions.makeCustomAnimation(this, 0, 0);
+
+        switch (index) {
+            case 0: // 첫 번째 카드뷰 클릭
+                intent = new Intent(this, KingNoobActivity.class);
+                break;
+            case 1:
+                intent = new Intent(this, Noob1Activity.class);
+                break;
+            default:
+                return;
+        }
+
+        startActivity(intent, options.toBundle());
     }
 }

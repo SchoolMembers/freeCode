@@ -1,7 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- 기본 색상 -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#7A7A7A</color>
     <color name="darkGray">#515151</color>
+
+    <!-- 빨강 계열 -->
+    <color name="red">#FFFF0000</color>
+    <color name="darkRed">#FF8B0000</color>
+    <color name="lightRed">#FFFFA07A</color>
+    <color name="pink">#FFBDC7</color>
+    <color name="hotPink">#FFFF69B4</color>
+    <color name="deepPink">#FFFF1493</color>
+    <color name="lightPink">#FFCFD7</color>
+
+    <!-- 주황 계열 -->
+    <color name="orange">#FFFFA500</color>
+    <color name="darkOrange">#FFFF8C00</color>
+    <color name="lightOrange">#FFFFDAB9</color>
+
+    <!-- 노랑 계열 -->
+    <color name="yellow">#FFFFFF00</color>
+    <color name="lightYellow">#FFFFC8</color>
+    <color name="gold">#D2AE03</color>
+    <color name="darkGold">#FFB8860B</color>
+
+    <!-- 초록 계열 -->
+    <color name="green">#FF008000</color>
+    <color name="darkGreen">#FF006400</color>
+    <color name="lightGreen">#FF90EE90</color>
+    <color name="lime">#FF00FF00</color>
+    <color name="forestGreen">#FF228B22</color>
+    <color name="olive">#FF808000</color>
+    <color name="mintGreen">#FF98FF98</color>
+
+    <!-- 파랑 계열 -->
+    <color name="blue">#FF0000FF</color>
+    <color name="darkBlue">#FF00008B</color>
+    <color name="lightBlue">#FFADD8E6</color>
+    <color name="skyBlue">#FF87CEEB</color>
+    <color name="deepSkyBlue">#FF00BFFF</color>
+    <color name="navy">#FF000080</color>
+    <color name="teal">#FF008080</color>
+    <color name="aqua">#FF00FFFF</color>
+    <color name="cyan">#FF00FFFF</color>
+
+    <!-- 보라 계열 -->
+    <color name="purple">#FF800080</color>
+    <color name="darkPurple">#FF4B0082</color>
+    <color name="lightPurple">#FF9370DB</color>
+    <color name="violet">#FFEE82EE</color>
+    <color name="lavender">#FFE6E6FA</color>
+    <color name="orchid">#FFDA70D6</color>
+
+    <!-- 갈색 계열 -->
+    <color name="brown">#874A01</color>
+    <color name="darkBrown">#FF654321</color>
+    <color name="lightBrown">#FFD2B48C</color>
+
+    <!-- 추가 색상 -->
+    <color name="silver">#FFC0C0C0</color>
+    <color name="coral">#FFFF7F50</color>
 </resources>
