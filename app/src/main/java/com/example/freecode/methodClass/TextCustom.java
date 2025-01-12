@@ -62,6 +62,19 @@ public class TextCustom {
             start = text.indexOf(piece, end);
         }
     }
+    public void backgroundCount(int color, int count) {
+        int start = text.indexOf(piece);
+        int stop = 0;
+        while (start >= 0) {
+            int end = start + piece.length();
+            span.setSpan(new BackgroundColorSpan(color), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            start = text.indexOf(piece, end);
+            stop += 1;
+            if (stop >= count) {
+                return;
+            }
+        }
+    }
 
     //글자 조각 크기가 다른 텍스트 사이즈의 value배가 됨
     public void size(float value)  {
@@ -77,6 +90,20 @@ public class TextCustom {
             int end = start + piece.length();
             span.setSpan(new RelativeSizeSpan(value), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
             start = text.indexOf(piece, end);
+        }
+    }
+
+    public void sizeCount(float value, int count) {
+        int start = text.indexOf(piece);
+        int stop = 0;
+        while (start >= 0) {
+            int end = start + piece.length();
+            span.setSpan(new RelativeSizeSpan(value), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            start = text.indexOf(piece, end);
+            stop += 1;
+            if (stop >= count) {
+                return;
+            }
         }
     }
 
@@ -97,6 +124,20 @@ public class TextCustom {
         }
     }
 
+    public void textColorCount(int color, int count) {
+        int start = text.indexOf(piece);
+        int stop = 0;
+        while (start >= 0) {
+            int end = start + piece.length();
+            span.setSpan(new ForegroundColorSpan(color), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            start = text.indexOf(piece, end);
+            stop += 1;
+            if (stop >= count) {
+                return;
+            }
+        }
+    }
+
     //글자 조각 스타일 지정
     //스타일 종류 : Typeface.BOLD, Typeface.ITALIC, Typeface.BOLD_ITALIC, Typeface.NORMAL
     public void style(int style) {
@@ -112,6 +153,19 @@ public class TextCustom {
             int end = start + piece.length();
             span.setSpan(new StyleSpan(style), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
             start = text.indexOf(piece, end);
+        }
+    }
+    public void styleCount(int style, int count) {
+        int start = text.indexOf(piece);
+        int stop = 0;
+        while (start >= 0) {
+            int end = start + piece.length();
+            span.setSpan(new StyleSpan(style), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            start = text.indexOf(piece, end);
+            stop += 1;
+            if (stop >= count) {
+                return;
+            }
         }
     }
 
