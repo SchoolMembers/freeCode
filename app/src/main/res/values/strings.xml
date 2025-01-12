@@ -27,9 +27,9 @@
     <string name="step10">! 고급 - 3</string>
     <string name="step_run">진행도 0%</string>
     <string name="step1_des">프로그래밍 개념, 용어 등</string>
-    <string name="step2_des">자료형 - 1, 결과 출력하기</string>
-    <string name="step3_des">자료형 - 2, 제어문</string>
-    <string name="step4_des">반복문, 값 입력받기</string>
+    <string name="step2_des">자료형 - 1</string>
+    <string name="step3_des">자료형 - 2, 결과 출력하기</string>
+    <string name="step4_des">제어문, 반복문, 값 입력받기</string>
     <string name="step5_des">내장 함수</string>
     <string name="step6_des">함수, 클래스</string>
     <string name="step7_des">모듈, 패키지, 파일 읽고 쓰기</string>
