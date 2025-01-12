@@ -58,6 +58,7 @@
     <string name="div2">나누기의 몫만</string>
     <string name="div3">나누기의 나머지만</string>
     <string name="pow">제곱</string>
+    <string name="complete">완료</string>
 
     <!--RunActivity-->
     <string name="open_info">▶  제한된 기능 보기</string>

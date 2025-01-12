@@ -48,9 +48,14 @@ public class KingNoobActivity extends AppCompatActivity {
 
         //viewpager 설정
         viewPager = binding.viewPager;
+        viewPager.setOffscreenPageLimit(1);
         adapter = new KingNoobViewPagerAdapter(this);
         viewPager.setAdapter(adapter);
-        viewPager.setCurrentItem(lastPage, false);
+        if (lastPage < 5) {
+            viewPager.setCurrentItem(lastPage, false);
+        } else {
+            viewPager.setCurrentItem(4, false);
+        }
         viewPager.setUserInputEnabled(false); // 뷰 페이지 스크롤로 넘기기 비활
 
         //뒤로가기 버튼 (시스템)
@@ -79,7 +84,11 @@ public class KingNoobActivity extends AppCompatActivity {
     public void moveToNextPage() {
         int currentItem = viewPager.getCurrentItem();
         if (currentItem + 1 < adapter.getItemCount()) {
-            viewPager.setCurrentItem(currentItem + 1, true);
+            if (currentItem + 1 != 5) {
+                viewPager.setCurrentItem(currentItem + 1, true);
+            } else {
+                viewPager.setCurrentItem(currentItem + 1, false);
+            }
         }
     }
 
