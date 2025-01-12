@@ -59,14 +59,14 @@
 
         \n\n&lt; 내장 함수 &gt;
 
-        \nprint(), len(), range(), sum(), abs(), round(), all(), any(), sorted(),
+        \n\nprint(), len(), range(), sum(), abs(), round(), all(), any(), sorted(),
         min(), max(), int(), float(), str(), dict(), set(), list(), tuple(), bool(), zip(),
         enumerate(), pow(), reversed(), filter(), map(), divmod(), chr(), ord(),
         hex(), bin(), oct()
 
-        \n\n&lt; math 라이브러리 &gt;
-        \n\n! 원래는 import math 를 사용해야 하지만, FreeCode에서는 import math를 하면 오류가 발생합니다. math.pi 처럼 수학 함수를 바로 사용하세요!
-        \nsqrt(), sin(), cos(), tan(), pi(), e(), log(), exp(), ceil(),
+        \n\n\n&lt; math 라이브러리 &gt;
+        \n! 원래는 import math 를 사용해야 하지만, FreeCode에서는 import math를 하면 오류가 발생합니다. math.pi 처럼 수학 함수를 바로 사용하세요!
+        \n\nsqrt(), sin(), cos(), tan(), pi(), e(), log(), exp(), ceil(),
         floor(), fabs(), pow()
     </string>
 </resources>
