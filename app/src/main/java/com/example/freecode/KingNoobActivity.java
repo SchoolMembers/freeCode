@@ -48,7 +48,6 @@ public class KingNoobActivity extends AppCompatActivity {
 
         //viewpager 설정
         viewPager = binding.viewPager;
-        viewPager.setOffscreenPageLimit(1);
         adapter = new KingNoobViewPagerAdapter(this);
         viewPager.setAdapter(adapter);
         if (lastPage < 5) {
