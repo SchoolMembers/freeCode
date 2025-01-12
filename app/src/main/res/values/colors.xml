@@ -19,7 +19,8 @@
     <!-- 주황 계열 -->
     <color name="orange">#FFFFA500</color>
     <color name="darkOrange">#FFFF8C00</color>
-    <color name="lightOrange">#FFFFDAB9</color>
+    <color name="lightOrange">#FFD9B4</color>
+    <color name="veryLightOrange">#FFEDDE</color>
 
     <!-- 노랑 계열 -->
     <color name="yellow">#FFFFFF00</color>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="noob1_page1_title">자료형 - int, float</string>
+    <string name="noob1_page1_des1">
+        자료형이란 프로그래밍을 할 때 쓰이는 숫자, 문자열 등의 자료 형태로 사용하는 모든 것을 뜻해요.
+        \n\n먼저, 자료형 중 int를 학습해 볼까요?
+        \nint와 float은 우리가 흔히 알고 있는 10, 1.1과 같은 숫자 형태예요.
+    </string>
+    <string name="noob1_page1_des2">
+        #정수(int)
+        \na = 2
+        \nb = -1
+        \n\n#실수(float)
+        \nc = 1.2
+        \nd = -2.5
+    </string>
+    <string name="noob1_page1_des3">
+        8진수와 16진수란?
+    </string>
+    <string name="noob1_page1_des4">
+        8진수(octal)는 숫자가 0o 또는 0O(숫자 0 + 알바벳 소문자 o 또는 대문자 O)으로 시작해요.
+    </string>
+    <string name="noob1_page1_des5">
+        a = 0o177
+        \nprint(a)
+        \n#결과 : 127
+    </string>
+    <string name="noob1_page1_des6">
+        16진수(hexadecimal)는 0x로 시작해요.
+    </string>
+    <string name="noob1_page1_des7">
+        a = 0xABC
+        \nprint(a)
+        \n#결과 : 2748
+    </string>
+    <string name="noob1_page2_title">연산자</string>
+    <string name="noob1_page2_des1">파이썬에서는 연산자를 사용해 다양한 수학 연산을 할 수 있어요.</string>
+    <string name="noob1_page2_des2">&lt;연산자의 종류&gt;</string>
+    <string name="noob1_page2_des3">&lt;사용 예시&gt;</string>
+    <string name="noob1_page2_des4">
+        8 / 5 #결과: 1.6
+        \n\n8 // 5 #결과: 1
+        \n\n8 % 5 #결과: 3
+        \n\n2 ** 3 #결과: 8
+    </string>
+    <string name="noob1_page2_des5">나머지가 왜 6이 아닌 3일까?</string>
+    <string name="noob1_page2_table_ex1">1 + 2, 3 + 4.1 등</string>
+    <string name="noob1_page2_table_ex2">8 - 3, 1.1 - 0.1 등</string>
+    <string name="noob1_page2_table_ex3">3 * 5, 4.1 * 5 등</string>
+    <string name="noob1_page2_table_ex4">10 / 2, 3 / 5 등</string>
+    <string name="noob1_page2_table_ex5">4 // 2, 2 // 7 등</string>
+    <string name="noob1_page2_table_ex6">14 % 2, 13 % 3 등</string>
+    <string name="noob1_page2_table_ex7">2 ** 2, 3 ** 4 등</string>
+</resources>
