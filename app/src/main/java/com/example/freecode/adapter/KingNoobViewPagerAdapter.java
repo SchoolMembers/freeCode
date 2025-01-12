@@ -7,6 +7,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import com.example.freecode.fragment.kingnoob.KingNoobFragment1;
 import com.example.freecode.fragment.kingnoob.KingNoobFragment2;
 import com.example.freecode.fragment.kingnoob.KingNoobFragment3;
+import com.example.freecode.fragment.kingnoob.KingNoobFragment4;
 
 public class KingNoobViewPagerAdapter extends FragmentStateAdapter {
 
@@ -24,6 +25,8 @@ public class KingNoobViewPagerAdapter extends FragmentStateAdapter {
                 return new KingNoobFragment2();
             case 2:
                 return new KingNoobFragment3();
+            case 3:
+                return new KingNoobFragment4();
             default:
                 throw new IllegalStateException("Unexpected position: " + position);
         }
@@ -31,7 +34,7 @@ public class KingNoobViewPagerAdapter extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        return 3;
+        return 5;
     }
 
 }
