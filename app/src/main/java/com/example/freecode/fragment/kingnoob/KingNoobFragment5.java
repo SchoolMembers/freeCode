@@ -204,17 +204,24 @@ public class KingNoobFragment5 extends Fragment {
         textCustom.setting();
 
         textCustom = new TextCustom(des10, text10);
-        textCustom.setPiece("\"\"\"더하기 결과를 알아볼까요?\nprint()로 출력을 해봅시다!!\"\"\"");
-        textCustom.textColor(ContextCompat.getColor(context, R.color.darkBlue));
         textCustom.setPiece("print(");
-        textCustom.textColor(ContextCompat.getColor(context, R.color.darkGreen));
+        textCustom.textColorAll(ContextCompat.getColor(context, R.color.darkGreen));
         textCustom.setPiece(")");
-        textCustom.textColor(ContextCompat.getColor(context, R.color.darkGreen));
+        textCustom.textColorAll(ContextCompat.getColor(context, R.color.darkGreen));
+        textCustom.setPiece("더하기 결과를 알아볼까요?");
+        textCustom.textColor(ContextCompat.getColor(context, R.color.darkBlue));
+        textCustom.setPiece("print()로 출력을 해봅시다!!");
+        textCustom.textColor(ContextCompat.getColor(context, R.color.darkBlue));
+        textCustom.setPiece("\"");
+        textCustom.textColorAll(ContextCompat.getColor(context, R.color.darkBlue));
         textCustom.setting();
 
         textCustom = new TextCustom(des11, text11);
         textCustom.setPiece("결과: 4");
         textCustom.style(Typeface.BOLD_ITALIC);
+        textCustom.setPiece("Tip");
+        textCustom.background(ContextCompat.getColor(context, R.color.yellow));
+        textCustom.size(1.2f);
         textCustom.setting();
 
         return view;

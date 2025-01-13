@@ -12,7 +12,7 @@ import com.example.freecode.fragment.kingnoob.KingNoobFragment5;
 import com.example.freecode.fragment.kingnoob.KingNoobFragment6;
 
 public class KingNoobViewPagerAdapter extends FragmentStateAdapter {
-    private long[] fragmentIds;
+    private final long[] fragmentIds;
 
     public KingNoobViewPagerAdapter(@NonNull FragmentActivity fragmentActivity) {
         super(fragmentActivity);
