@@ -16,6 +16,7 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import com.example.freecode.KingNoobActivity;
 import com.example.freecode.R;
+import com.example.freecode.adapter.KingNoobViewPagerAdapter;
 import com.example.freecode.methodClass.LastPageInfo;
 import com.example.freecode.methodClass.TextCustom;
 
@@ -87,7 +88,11 @@ public class KingNoobFragment4 extends Fragment {
             // 현재 페이지가 현재 진행도의 마지막 페이지일 때
             if (lastPage.getLastPage(context, "King") < 4) {
                 lastPage.setLastPage(context, "King", 4);
-                Log.d("KingNoobActivity", "KingNoobFragment4 set lastPage : 3");
+                Log.d("KingNoobActivity", "KingNoobFragment4 set lastPage : 4");
+                KingNoobViewPagerAdapter adapter = (KingNoobViewPagerAdapter) activity.getViewPager().getAdapter();
+                if (adapter != null) {
+                    adapter.refreshFragment(4);
+                }
             }
         });
 

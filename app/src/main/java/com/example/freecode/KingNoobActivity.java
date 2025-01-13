@@ -98,4 +98,8 @@ public class KingNoobActivity extends AppCompatActivity {
             viewPager.setCurrentItem(currentItem - 1, true);
         }
     }
+
+    public ViewPager2 getViewPager() {
+        return viewPager;
+    }
 }

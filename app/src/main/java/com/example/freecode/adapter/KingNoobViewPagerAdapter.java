@@ -12,9 +12,14 @@ import com.example.freecode.fragment.kingnoob.KingNoobFragment5;
 import com.example.freecode.fragment.kingnoob.KingNoobFragment6;
 
 public class KingNoobViewPagerAdapter extends FragmentStateAdapter {
+    private long[] fragmentIds;
 
     public KingNoobViewPagerAdapter(@NonNull FragmentActivity fragmentActivity) {
         super(fragmentActivity);
+        fragmentIds = new long[getItemCount()];
+        for (int i = 0; i < fragmentIds.length; i++) {
+            fragmentIds[i] = i; // 초기화
+        }
     }
 
     @NonNull
@@ -43,4 +48,22 @@ public class KingNoobViewPagerAdapter extends FragmentStateAdapter {
         return 6;
     }
 
+    @Override
+    public long getItemId(int position) {
+        return fragmentIds[position];
+    }
+
+    @Override
+    public boolean containsItem(long itemId) {
+        for (long id : fragmentIds) {
+            if (id == itemId) return true;
+        }
+        return false;
+    }
+
+    public void refreshFragment(int position) {
+        fragmentIds[position] = System.currentTimeMillis(); // 새로운 ID로 업데이트
+        notifyDataSetChanged();
+    }
 }
+
