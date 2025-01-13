@@ -10,6 +10,7 @@ import com.example.freecode.fragment.kingnoob.KingNoobFragment3;
 import com.example.freecode.fragment.kingnoob.KingNoobFragment4;
 import com.example.freecode.fragment.kingnoob.KingNoobFragment5;
 import com.example.freecode.fragment.kingnoob.KingNoobFragment6;
+import com.example.freecode.fragment.kingnoob.KingNoobFragment7;
 
 public class KingNoobViewPagerAdapter extends FragmentStateAdapter {
     private final long[] fragmentIds;
@@ -38,6 +39,8 @@ public class KingNoobViewPagerAdapter extends FragmentStateAdapter {
                 return new KingNoobFragment5();
             case 5:
                 return new KingNoobFragment6();
+            case 6:
+                return new KingNoobFragment7();
             default:
                 throw new IllegalStateException("Unexpected position: " + position);
         }
@@ -45,7 +48,7 @@ public class KingNoobViewPagerAdapter extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        return 6;
+        return 7;
     }
 
     @Override

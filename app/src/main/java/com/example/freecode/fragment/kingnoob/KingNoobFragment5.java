@@ -78,8 +78,6 @@ public class KingNoobFragment5 extends Fragment {
                     // 애니메이션 반복 시
                 }
             });
-        } else {
-            nextButton.setVisibility(View.GONE);
         }
 
 
@@ -245,7 +243,7 @@ public class KingNoobFragment5 extends Fragment {
 
         // [이전 버튼 -> 다음 버튼] 레이아웃 오류 방지
         if (lastPage.getLastPage(context, "King") > 4) {
-            nextButton.setVisibility(View.GONE);
+            nextButton.setEnabled(true);
         } else {
             if (!isAnimationFinished) {
                 nextButton.setEnabled(false);
