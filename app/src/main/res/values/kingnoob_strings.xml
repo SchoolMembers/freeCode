@@ -237,4 +237,20 @@
         \n□□□ = a + b
         \nprint(sum)
     </string>
+    <string name="quiz_king3">
+        왕초보 - 퀴즈3
+        \n\n헉, 오류가 생겼어요! 오류의 원인이 되는 부분을 고쳐서 코드를 다시 입력해 보세요!
+    </string>
+    <string name="quiz_king3_example">
+        a와 b를 더한 값 출력
+        \na = 11
+        \nb = 15
+        \nprint(a + b)
+    </string>
+    <string name="quiz_king3_correct1">#a와b를더한값출력a=11b=15print(a+b)</string>
+    <string name="quiz_king3_correct2">\"\"\"a와b를더한값출력\"\"\"a=11b=15print(a+b)</string>
+
+    <string name="king_complete">
+        축하합니다🎉, 드디어 왕초보 단계를 완료했어요!
+        \n이제 초급 단계로 가서 파이썬 기초를 학습하도록 해요!</string>
 </resources>

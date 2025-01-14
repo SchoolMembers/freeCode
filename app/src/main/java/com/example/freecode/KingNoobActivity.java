@@ -50,6 +50,7 @@ public class KingNoobActivity extends AppCompatActivity {
         viewPager = binding.viewPager;
         adapter = new KingNoobViewPagerAdapter(this);
         viewPager.setAdapter(adapter);
+        //퀴즈 이상 페이지까지 깼을 시, 퀴즈 전 단계로 로딩
         if (lastPage < 5) {
             viewPager.setCurrentItem(lastPage, false);
         } else {

@@ -20,6 +20,7 @@ import com.chaquo.python.android.AndroidPlatform;
 import com.example.freecode.databinding.ActivityRunBinding;
 import com.example.freecode.methodClass.DialogInfo;
 import com.example.freecode.methodClass.NvgListener;
+import com.example.freecode.methodClass.RunPy;
 import com.example.freecode.methodClass.TextCustom;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -108,18 +109,8 @@ public class RunActivity  extends AppCompatActivity {
         runButton.setOnClickListener(v -> {
             String userCode = codeInput.getText().toString();
 
-            if (!userCode.isEmpty()) {
-                try (PyObject result = Python.getInstance()
-                        .getModule("main")
-                        .callAttr("eval", userCode)) {
-                    outputView.setText(result.toString());
-                    Log.d("RunActivity", "User code: " + userCode);
-                } catch (Exception e) {
-                    outputView.setText(String.format("Error: %s", e.getMessage()));
-                }
-            } else {
-                outputView.setText(ContextCompat.getString(this, R.string.emtpy_code));
-            }
+            RunPy runPy = new RunPy(userCode, outputView, this);
+            runPy.run();
         });
 
         //제한된 기능 보기

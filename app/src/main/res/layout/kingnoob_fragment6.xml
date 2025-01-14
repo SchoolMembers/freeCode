@@ -48,7 +48,8 @@
         <LinearLayout
             android:id="@+id/quiz1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:orientation="vertical"
             android:layout_margin="10dp">
             <TextView
@@ -248,7 +249,8 @@
         <LinearLayout
             android:id="@+id/quiz2"
             android:layout_width="match_parent"
-            android:layout_height="500dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:orientation="vertical"
             android:layout_margin="10dp"
             android:visibility="gone">
@@ -256,7 +258,7 @@
                 android:id="@+id/q2"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1.7"
+                android:layout_weight="2"
                 android:text="@string/quiz_king2"
                 android:textSize="15sp"
                 android:textStyle="bold"
@@ -482,10 +484,82 @@
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
+        <LinearLayout
+            android:id="@+id/quiz3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_margin="10dp"
+            android:visibility="gone">
+            <TextView
+                android:id="@+id/q3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/quiz_king3"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/simple"
+                android:layout_marginBottom="5dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/example2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/quiz_king3_example"
+                    android:fontFamily="@font/code"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:background="@color/lightGray" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="10dp">
+                    <EditText
+                        android:id="@+id/input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="100dp"
+                        android:padding="10dp"
+                        android:hint="@string/input_code"
+                        android:fontFamily="@font/code"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:background="@color/veryLightOrange"
+                        android:gravity="start"/>
+                    <android.widget.Button
+                        android:id="@+id/run_button"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:background="@drawable/play"
+                        android:backgroundTint="@color/colorSecondary"
+                        android:layout_gravity="center"
+                        android:gravity="center"/>
+                    <TextView
+                        android:id="@+id/output"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/button_background1"
+                        android:text="Output"
+                        android:gravity="start"
+                        android:textColor="@android:color/black"
+                        android:padding="10dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/completed"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:layout_gravity="center_horizontal"
             android:visibility="gone"/>
         <LinearLayout
@@ -505,17 +579,18 @@
                 android:layout_gravity="center"
                 android:gravity="center"/>
             <android.widget.Button
-                android:id="@+id/next_button"
+                android:id="@+id/finish_button"
                 android:layout_width="80dp"
                 android:layout_height="35dp"
                 android:text="@string/complete"
                 android:fontFamily="@font/bold"
-                android:textColor="@color/pink"
                 android:textSize="15sp"
                 android:background="@drawable/button_background1"
+                android:textColor="@color/pink"
+                android:backgroundTint="@color/colorOnPrimary"
+                android:layout_marginStart="20dp"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:layout_marginStart="20dp"
                 android:visibility="gone"/>
         </LinearLayout>
     </LinearLayout>

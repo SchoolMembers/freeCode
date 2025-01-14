@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,19 +17,23 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.chaquo.python.Python;
+import com.chaquo.python.android.AndroidPlatform;
 import com.example.freecode.KingNoobActivity;
 import com.example.freecode.R;
 import com.example.freecode.adapter.KingNoobViewPagerAdapter;
 import com.example.freecode.methodClass.LastPageInfo;
+import com.example.freecode.methodClass.RunPy;
 import com.example.freecode.methodClass.TextCustom;
 import java.util.ArrayList;
 
 public class KingNoobFragment6 extends Fragment {
     // Page 5
 
-    private Button nextButton;
+    private Button finishButton;
     LastPageInfo lastPage;
     Context context;
+    boolean checkLast;
 
     private int choice = 0;
     ArrayList<TextView> answerList = new ArrayList<>();
@@ -56,14 +61,14 @@ public class KingNoobFragment6 extends Fragment {
 
         //클리어 챕터인지 아닌지 확인
         lastPage = new LastPageInfo();
-        boolean checkLast = lastPage.getLastPage(context, "King") <= 5; //참이면 아직 못 깸
-        nextButton = view.findViewById(R.id.next_button);
+        checkLast = lastPage.getLastPage(context, "King") <= 5; //참이면 아직 못 깸
+        finishButton = view.findViewById(R.id.finish_button);
         Button beforeButton = view.findViewById(R.id.before_button);
 
         KingNoobActivity activity = (KingNoobActivity) requireActivity();
 
         if (!checkLast) {
-            nextButton.setVisibility(View.GONE);
+            finishButton.setVisibility(View.GONE);
         }
 
         //왕초보 텍스트 설정
@@ -123,7 +128,7 @@ public class KingNoobFragment6 extends Fragment {
         quiz1 = view.findViewById(R.id.quiz1);
         quizButton.setOnClickListener(v -> {
             if (choice == 0) { //선택 x
-                Toast.makeText(context, ContextCompat.getString(context, R.string.nullAnswer), Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, ContextCompat.getString(context, R.string.null_answer), Toast.LENGTH_SHORT).show();
             } else if (choice == 3) { //정답
                 LottieAnimationView completed = view.findViewById(R.id.completed);
                 if (completed != null) {
@@ -135,7 +140,7 @@ public class KingNoobFragment6 extends Fragment {
                     setLottieAnimationListener(completed, 1);
                 }
             } else { //오답
-                Toast.makeText(context, ContextCompat.getString(context, R.string.notAnswer), Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, ContextCompat.getString(context, R.string.not_answer), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -212,9 +217,65 @@ public class KingNoobFragment6 extends Fragment {
         });
 
 
+        //코드 입력 문제
+        quiz3 = view.findViewById(R.id.quiz3);
+        TextView q3 = view.findViewById(R.id.q3);
+        String text3 = q3.getText().toString();
+        textCustom = new TextCustom(q3, text3);
+        textCustom.setPiece("왕초보");
+        textCustom.size(1.3f);
+        textCustom.setting();
+
+        EditText inputCode = view.findViewById(R.id.input);
+        Button runButton = view.findViewById(R.id.run_button);
+        TextView output = view.findViewById(R.id.output);
+
+        // Python init
+        if (!Python.isStarted()) {
+            Python.start(new AndroidPlatform(context));
+        }
+
+        runButton.setOnClickListener(v -> {
+            String userCode = inputCode.getText().toString().trim();
+
+            RunPy runPy = new RunPy(userCode, output, context);
+            boolean emtpy = runPy.run();
+
+            if (!emtpy) {return;}
+
+            String result = output.getText().toString().trim();
+
+            result = result.replaceAll("\\s+", ""); //모든 공백 문자 제거
+
+            String correct1 = ContextCompat.getString(context, R.string.quiz_king3_correct1).replaceAll("\\s+", "");
+            String correct2 = ContextCompat.getString(context, R.string.quiz_king3_correct2).replaceAll("\\s+", "");
+
+            Log.d("Debug", "Result: " + result);
+            Log.d("Debug", "Correct1: " + correct1);
+            Log.d("Debug", "Correct2: " + correct2);
+
+            userCode = userCode.replaceAll("\\s+", "");
+
+            if (result.equals("26") && (userCode.equals(correct1) || userCode.equals(correct2))) {
+                LottieAnimationView completed = view.findViewById(R.id.completed);
+                if (completed != null) {
+                    quiz3.setVisibility(View.GONE);
+                    completed.setVisibility(View.VISIBLE);
+                    completed.setAnimation(R.raw.congratulations2);
+                    completed.setRepeatCount(0);
+                    completed.playAnimation();
+                    completed.removeAllAnimatorListeners(); //애니메이션 재사용 위한 세팅
+                    setLottieAnimationListener(completed, 3);
+                }
+            } else {
+                Toast.makeText(context, ContextCompat.getString(context, R.string.not_answer_code), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
 
         //완료 버튼 리스너
-        nextButton.setOnClickListener(v -> {
+        finishButton.setOnClickListener(v -> {
             activity.moveToNextPage();
             // 현재 페이지가 현재 진행도의 마지막 페이지일 때
             if (lastPage.getLastPage(context, "King") < 6) {
@@ -261,7 +322,7 @@ public class KingNoobFragment6 extends Fragment {
                                     setLottieAnimationListener(completed, 2);
                                 }
                             } else {
-                                Toast.makeText(context, ContextCompat.getString(context, R.string.notAnswer), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(context, ContextCompat.getString(context, R.string.not_answer), Toast.LENGTH_SHORT).show();
                             }
                         }
                         break;
@@ -302,7 +363,16 @@ public class KingNoobFragment6 extends Fragment {
                     animationView.setVisibility(View.GONE);
                     quiz2.setVisibility(View.VISIBLE);
                 } else if (num == 2) {
-
+                    quiz3.setVisibility(View.VISIBLE);
+                    animationView.setVisibility(View.GONE);
+                } else if (num == 3) {
+                    if (!checkLast) {
+                        finishButton.setVisibility(View.GONE);
+                    } else {
+                        finishButton.setVisibility(View.VISIBLE);
+                    }
+                    quiz3.setVisibility(View.VISIBLE);
+                    animationView.setVisibility(View.GONE);
                 }
             }
 
@@ -367,7 +437,7 @@ public class KingNoobFragment6 extends Fragment {
 
         // [이전 버튼 -> 다음 버튼] 레이아웃 오류 방지
         if (lastPage.getLastPage(context, "King") > 5) {
-            nextButton.setVisibility(View.GONE);
+            finishButton.setVisibility(View.GONE);
         }
     }
 }

@@ -68,8 +68,10 @@
     <string name="num3">③</string>
     <string name="num4">④</string>
     <string name="num5">⑤</string>
-    <string name="nullAnswer">정답을 선택해 주세요!</string>
-    <string name="notAnswer">이런, 정답이 아닙니다. 다시 선택해 주세요!</string>
+    <string name="null_answer">정답을 선택해 주세요!</string>
+    <string name="not_answer">이런, 정답이 아닙니다. 다시 선택해 주세요!</string>
+    <string name="not_answer_code">이런, 정답이 아닙니다. 다시 입력해 주세요!</string>
+    <string name="input_code">코드를 입력하세요</string>
 
 
     <!--RunActivity-->
