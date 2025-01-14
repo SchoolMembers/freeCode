@@ -8,20 +8,27 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ScrollView;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityOptionsCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.freecode.databinding.ActivityMainBinding;
+import com.example.freecode.methodClass.LastPageInfo;
 import com.example.freecode.methodClass.NvgListener;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
     public static int checkInit = 0;
 
     private List<MaterialCardView> cardViews = new ArrayList<>();
+
+    ActivityResultLauncher<Intent> activityLauncher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,6 +119,37 @@ public class MainActivity extends AppCompatActivity {
         // 메뉴 바 아이템 선택 리스너 설정
         navRail.setOnItemSelectedListener(item -> NvgListener.itemSelected(this, item.getItemId()));
 
+        //진행도 세팅
+        TextView progressKing =  binding.progressKingNoob;
+        TextView progressNoob1 = binding.progressNoob1;
+
+        int lastPageKing = new LastPageInfo().getLastPage(this, "King") + 1;
+        if (lastPageKing < 0) {
+            lastPageKing = 0;
+        }
+        int progressPer = (int)(((float) lastPageKing / 7) * 100);
+        progressKing.setText(String.format(Locale.getDefault(), "진행도 %d%%", progressPer));
+
+        activityLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if (result.getResultCode() == RESULT_OK) {
+                        Intent data = result.getData();
+                        if (data != null) {
+                            // 어떤 액티비티에서 온 결과인지 구분
+                            String source = data.getStringExtra("source");
+                            int progressPercentage = data.getIntExtra("progress", 0);
+
+                            if ("KingNoob".equals(source)) {
+                                progressKing.setText(String.format(Locale.getDefault(), "진행도 %d%%", progressPercentage));
+                            } else if ("Noob".equals(source)) {
+                                progressNoob1.setText(String.format(Locale.getDefault(), "진행도 %d%%", progressPercentage));
+                            }
+                        }
+                    }
+                }
+        );
+
         //챕터 선택
         cardViews.add(binding.kingNoob);
         cardViews.add(binding.noob1);
@@ -125,19 +165,21 @@ public class MainActivity extends AppCompatActivity {
 
     private void handleCardClick(int index) {
         Intent intent;
-        ActivityOptions options = ActivityOptions.makeCustomAnimation(this, 0, 0);
+        ActivityOptionsCompat options = ActivityOptionsCompat.makeCustomAnimation(this, 0, 0);
 
         switch (index) {
             case 0: // 첫 번째 카드뷰 클릭
                 intent = new Intent(this, KingNoobActivity.class);
+                activityLauncher.launch(intent, options);
                 break;
             case 1:
                 intent = new Intent(this, Noob1Activity.class);
+                activityLauncher.launch(intent, options);
                 break;
             default:
                 return;
         }
 
-        startActivity(intent, options.toBundle());
+
     }
 }

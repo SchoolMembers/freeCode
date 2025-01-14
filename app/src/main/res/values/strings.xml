@@ -27,9 +27,9 @@
     <string name="step10">! 고급 - 3</string>
     <string name="step_run">진행도 0%</string>
     <string name="step1_des">프로그래밍 개념, 용어 등</string>
-    <string name="step2_des">자료형 - 1, 결과 출력하기</string>
-    <string name="step3_des">자료형 - 2, 제어문</string>
-    <string name="step4_des">반복문, 값 입력받기</string>
+    <string name="step2_des">자료형 - 1, 연산자</string>
+    <string name="step3_des">자료형 - 2, 결과 출력하기</string>
+    <string name="step4_des">제어문, 반복문, 값 입력받기</string>
     <string name="step5_des">내장 함수</string>
     <string name="step6_des">함수, 클래스</string>
     <string name="step7_des">모듈, 패키지, 파일 읽고 쓰기</string>
@@ -41,6 +41,39 @@
     <string name="before">이전</string>
     <string name="no_data">데이터가 없습니다</string>
     <string name="emtpy_code">코드가 입력되지 않았습니다</string>
+    <string name="oper">연산자</string>
+    <string name="explanation">설명</string>
+    <string name="ex">예시</string>
+    <string name="oper_plus">+</string>
+    <string name="oper_minus">-</string>
+    <string name="oper_mul">*</string>
+    <string name="oper_div1">/</string>
+    <string name="oper_div2">//</string>
+    <string name="oper_div3">%</string>
+    <string name="oper_pow">**</string>
+    <string name="plus">더하기</string>
+    <string name="minus">빼기</string>
+    <string name="mul">곱하기</string>
+    <string name="div1">나누기</string>
+    <string name="div2">나누기의 몫만</string>
+    <string name="div3">나누기의 나머지만</string>
+    <string name="pow">제곱</string>
+    <string name="complete">완료</string>
+    <string name="choice">선택 결과: </string>
+    <string name="choice2">&lt; 선택 결과 &gt;</string>
+    <string name="quiz_button">결과 보기</string>
+    <string name="quiz_chap_info">메뉴의 퀴즈가 아닌 챕터의 퀴즈는 결과가 저장되지 않습니다.</string>
+    <string name="num1">①</string>
+    <string name="num2">②</string>
+    <string name="num3">③</string>
+    <string name="num4">④</string>
+    <string name="num5">⑤</string>
+    <string name="null_answer">정답을 선택해 주세요!</string>
+    <string name="not_answer">이런, 정답이 아닙니다. 다시 선택해 주세요!</string>
+    <string name="not_answer_code">이런, 정답이 아닙니다. 다시 입력해 주세요!</string>
+    <string name="input_code">코드를 입력하세요</string>
+    <string name="complete_button_info">완료 버튼을 클릭해야 진행도 100%가 됩니다.</string>
+
 
     <!--RunActivity-->
     <string name="open_info">▶  제한된 기능 보기</string>
@@ -54,17 +87,19 @@
 
         \n\n\n📌 FreeCode에서 제공하는 Python 기능
 
+        \n\n함수, 클래스, for, while, if 등
+
 
         \n\n&lt; 내장 함수 &gt;
 
-        \nprint(), len(), range(), sum(), abs(), round(), all(), any(), sorted(),
+        \n\nprint(), len(), range(), sum(), abs(), round(), all(), any(), sorted(),
         min(), max(), int(), float(), str(), dict(), set(), list(), tuple(), bool(), zip(),
         enumerate(), pow(), reversed(), filter(), map(), divmod(), chr(), ord(),
         hex(), bin(), oct()
 
-        \n\n&lt; math 라이브러리 &gt;
-        \n\n! 원래는 import math 를 사용해야 하지만, FreeCode에서는 import math를 하면 오류가 발생합니다. math.pi 처럼 수학 함수를 바로 사용하세요!
-        \nsqrt(), sin(), cos(), tan(), pi(), e(), log(), exp(), ceil(),
+        \n\n\n&lt; math 라이브러리 &gt;
+        \n! 원래는 import math 를 사용해야 하지만, FreeCode에서는 import math를 하면 오류가 발생합니다. math.pi 처럼 수학 함수를 바로 사용하세요!
+        \n\nsqrt(), sin(), cos(), tan(), pi(), e(), log(), exp(), ceil(),
         floor(), fabs(), pow()
     </string>
 </resources>

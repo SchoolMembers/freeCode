@@ -1,6 +1,7 @@
 package com.example.freecode.fragment.kingnoob;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,17 +11,17 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
+
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import com.example.freecode.KingNoobActivity;
 import com.example.freecode.R;
 import com.example.freecode.adapter.KingNoobViewPagerAdapter;
-import com.example.freecode.methodClass.DialogInfo;
 import com.example.freecode.methodClass.LastPageInfo;
 import com.example.freecode.methodClass.TextCustom;
 
-public class KingNoobFragment2 extends Fragment {
-    // Page 1
+public class KingNoobFragment4 extends Fragment {
+    // Page 3
 
     private boolean isAnimationFinished = false;
     private Button nextButton;
@@ -30,14 +31,14 @@ public class KingNoobFragment2 extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        Log.d("Fragment", "KingNoobFragment2 started");
-        View view = inflater.inflate(R.layout.kingnoob_fragment2, container, false);
+        Log.d("Fragment", "KingNoobFragment4 started");
+        View view = inflater.inflate(R.layout.kingnoob_fragment4, container, false);
 
         context = requireContext();
 
         //클리어 챕터인지 아닌지 확인
         lastPage = new LastPageInfo();
-        boolean checkLast = lastPage.getLastPage(context, "King") <= 1; //참이면 아직 못 깸
+        boolean checkLast = lastPage.getLastPage(context, "King") <= 3; //참이면 아직 못 깸
         nextButton = view.findViewById(R.id.next_button);
         Button beforeButton = view.findViewById(R.id.before_button);
 
@@ -54,7 +55,7 @@ public class KingNoobFragment2 extends Fragment {
         }
 
         if (checkLast) {
-            Log.d("Fragment", "KingNoobFragment2 checkLast true");
+            Log.d("Fragment", "KingNoobFragment4 checkLast true");
             nextButton.setEnabled(false);
             anim.setDuration(5000);
 
@@ -70,7 +71,7 @@ public class KingNoobFragment2 extends Fragment {
                     // 애니메이션 종료 시
                     isAnimationFinished = true;
                     nextButton.setEnabled(true);
-                    Log.d("Fragment", "KingNoobFragment2 nextButton visible, enabled true");
+                    Log.d("Fragment", "KingNoobFragment4 nextButton visible, enabled true");
                 }
 
                 @Override
@@ -85,12 +86,12 @@ public class KingNoobFragment2 extends Fragment {
         nextButton.setOnClickListener(v -> {
             activity.moveToNextPage();
             // 현재 페이지가 현재 진행도의 마지막 페이지일 때
-            if (lastPage.getLastPage(context, "King") < 2) {
-                lastPage.setLastPage(context, "King", 2);
-                Log.d("KingNoobActivity", "KingNoobFragment2 set lastPage : 2");
+            if (lastPage.getLastPage(context, "King") < 4) {
+                lastPage.setLastPage(context, "King", 4);
+                Log.d("KingNoobActivity", "KingNoobFragment4 set lastPage : 4");
                 KingNoobViewPagerAdapter adapter = (KingNoobViewPagerAdapter) activity.getViewPager().getAdapter();
                 if (adapter != null) {
-                    adapter.refreshFragment(2);
+                    adapter.refreshFragment(4);
                 }
             }
         });
@@ -98,60 +99,52 @@ public class KingNoobFragment2 extends Fragment {
         //이전 버튼 리스너
         beforeButton.setOnClickListener(v -> activity.moveToBeforePage());
 
-        //텍스트 강조 세팅
-        TextView des1 = view.findViewById(R.id.des1);
-        TextView des2 = view.findViewById(R.id.des2);
-        TextView des3 = view.findViewById(R.id.des3);
+        TextView textView = view.findViewById(R.id.des1);
+        String text = textView.getText().toString();
 
-        String text1 = des1.getText().toString();
-        String text2 = des2.getText().toString();
-        String text3 = des3.getText().toString();
+        TextCustom textCustom = new TextCustom(textView, text);
+        textCustom.setPiece("파이썬");
+        textCustom.textColorCount(ContextCompat.getColor(context, R.color.blue), 2);
+        textCustom.setPiece("장점");
+        textCustom.size(1.3f);
+        textCustom.setPiece("단점");
+        textCustom.size(1.3f);
+        textCustom.setPiece("사용성");
+        textCustom.size(1.3f);
 
-        TextCustom textCustom = new TextCustom(des1, text1);
-        textCustom.setPiece("프로그래밍");
+        textCustom.setPiece("간결한 문법");
+        textCustom.background(ContextCompat.getColor(context, R.color.veryLightOrange));
+        textCustom.setPiece("코드 가독성");
+        textCustom.background(ContextCompat.getColor(context, R.color.veryLightOrange));
+        textCustom.setPiece("플랫폼 독립성");
+        textCustom.background(ContextCompat.getColor(context, R.color.veryLightOrange));
+        textCustom.setPiece("풍부한 라이브러리");
+        textCustom.background(ContextCompat.getColor(context, R.color.veryLightOrange));
+        textCustom.setPiece("* 라이브러리란?");
+        textCustom.textColor(ContextCompat.getColor(context, R.color.gray));
+        textCustom.size(0.9f);
+        textCustom.setPiece("자주 사용되는 기능 또는 복잡한 알고리즘이 설계되어 있는 데이터의 집합이에요. 자세한 건 고급 단계에서 배우게 돼요!");
+        textCustom.textColor(ContextCompat.getColor(context, R.color.gray));
+        textCustom.size(0.9f);
+        textCustom.setPiece("무료 오픈소스");
+        textCustom.background(ContextCompat.getColor(context, R.color.veryLightOrange));
+        textCustom.setPiece("파이썬에게는 이외에도 많은 장점이 존재하며, 초보자와 전문가 모두에게 적합한 훌륭한 언어예요!");
+        textCustom.style(Typeface.BOLD_ITALIC);
+
+        textCustom.setPiece("비교적 느린 실행 속도");
+        textCustom.background(ContextCompat.getColor(context, R.color.lightGray));
+        textCustom.setPiece("모바일 언어에 비적합");
+        textCustom.background(ContextCompat.getColor(context, R.color.lightGray));
+
+        textCustom.setPiece("데이터 분석");
         textCustom.background(ContextCompat.getColor(context, R.color.lightYellow));
-        textCustom.size(1.1f);
+        textCustom.setPiece("인공지능 및 머신러닝");
+        textCustom.background(ContextCompat.getColor(context, R.color.lightYellow));
+        textCustom.setPiece("게임 개발");
+        textCustom.background(ContextCompat.getColor(context, R.color.lightYellow));
         textCustom.setting();
 
-        textCustom = new TextCustom(des2, text2);
-        textCustom.setPiece("프로그래밍");
-        textCustom.textColor(ContextCompat.getColor(context, R.color.hotPink));
-        textCustom.setPiece("컴퓨터에게 일을 시키기 위한 설계도를 만드는 작업");
-        textCustom.size(1.1f);
-        textCustom.setting();
 
-        textCustom = new TextCustom(des3, text3);
-        textCustom.setPiece("자연어");
-        textCustom.size(1.1f);
-        textCustom.textColor(ContextCompat.getColor(context, R.color.lightPurple));
-        textCustom.setPiece("기계어");
-        textCustom.size(1.1f);
-        textCustom.textColor(ContextCompat.getColor(context, R.color.lightPurple));
-        textCustom.setPiece("Python");
-        textCustom.textColorAll(ContextCompat.getColor(context, R.color.blue));
-        textCustom.setPiece("프로그래밍 언어");
-        textCustom.textColorAll(ContextCompat.getColor(context, R.color.green));
-        textCustom.setting();
-
-        // info 다이얼로그
-        Button infoButton = view.findViewById(R.id.info);
-        infoButton.setOnClickListener(v -> {
-            DialogInfo dialog = new DialogInfo(context);
-            String text = context.getString(R.string.king_page2_dialog);
-
-            TextCustom dialogText = new TextCustom(text);
-
-            dialogText.setPiece("프로그래밍과 코딩의 차이?");
-            dialogText.size(1.1f);
-            dialogText.setPiece("프로그래밍");
-            dialogText.textColorAll(ContextCompat.getColor(context, R.color.darkPurple));
-            dialogText.setPiece("코딩");
-            dialogText.textColorAll(ContextCompat.getColor(context, R.color.lightPurple));
-
-            dialog.setText(dialogText.getSpan(), 1);
-            dialog.show();
-            Log.d("Fragment", "KingNoobFragment2 info dialog show");
-        });
         return view;
     }
 
@@ -172,7 +165,7 @@ public class KingNoobFragment2 extends Fragment {
         super.onResume();
 
         // [이전 버튼 -> 다음 버튼] 레이아웃 오류 방지
-        if (lastPage.getLastPage(context, "King") > 1) {
+        if (lastPage.getLastPage(context, "King") > 3) {
             nextButton.setEnabled(true);
         } else {
             if (!isAnimationFinished) {
@@ -181,5 +174,4 @@ public class KingNoobFragment2 extends Fragment {
             }
         }
     }
-
 }
