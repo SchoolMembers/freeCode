@@ -72,6 +72,7 @@
     <string name="not_answer">이런, 정답이 아닙니다. 다시 선택해 주세요!</string>
     <string name="not_answer_code">이런, 정답이 아닙니다. 다시 입력해 주세요!</string>
     <string name="input_code">코드를 입력하세요</string>
+    <string name="complete_button_info">완료 버튼을 클릭해야 진행도 100%가 됩니다.</string>
 
 
     <!--RunActivity-->

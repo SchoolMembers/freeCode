@@ -34,6 +34,7 @@ public class KingNoobFragment6 extends Fragment {
     LastPageInfo lastPage;
     Context context;
     boolean checkLast;
+    TextView completeInfo;
 
     private int choice = 0;
     ArrayList<TextView> answerList = new ArrayList<>();
@@ -70,6 +71,9 @@ public class KingNoobFragment6 extends Fragment {
         if (!checkLast) {
             finishButton.setVisibility(View.GONE);
         }
+
+        //완료 정보
+        completeInfo = view.findViewById(R.id.info);
 
         //왕초보 텍스트 설정
         TextView textView = view.findViewById(R.id.q1);
@@ -276,6 +280,7 @@ public class KingNoobFragment6 extends Fragment {
 
         //완료 버튼 리스너
         finishButton.setOnClickListener(v -> {
+            completeInfo.setVisibility(View.GONE);
             activity.moveToNextPage();
             // 현재 페이지가 현재 진행도의 마지막 페이지일 때
             if (lastPage.getLastPage(context, "King") < 6) {
@@ -368,7 +373,9 @@ public class KingNoobFragment6 extends Fragment {
                 } else if (num == 3) {
                     if (!checkLast) {
                         finishButton.setVisibility(View.GONE);
+                        completeInfo.setVisibility(View.GONE);
                     } else {
+                        completeInfo.setVisibility(View.VISIBLE);
                         finishButton.setVisibility(View.VISIBLE);
                     }
                     quiz3.setVisibility(View.VISIBLE);
@@ -438,6 +445,7 @@ public class KingNoobFragment6 extends Fragment {
         // [이전 버튼 -> 다음 버튼] 레이아웃 오류 방지
         if (lastPage.getLastPage(context, "King") > 5) {
             finishButton.setVisibility(View.GONE);
+            completeInfo.setVisibility(View.GONE);
         }
     }
 }
