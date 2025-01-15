@@ -33,6 +33,7 @@
             android:fontFamily="@font/simple"
             android:layout_margin="10dp" />
         <TextView
+            android:id="@+id/des2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
@@ -73,6 +74,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp" />
         <TextView
+            android:id="@+id/des3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
@@ -93,6 +95,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp" />
         <TextView
+            android:id="@+id/des4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"

@@ -9,10 +9,14 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.TextView;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import com.example.freecode.Noob1Activity;
 import com.example.freecode.R;
+import com.example.freecode.adapter.Noob1ViewPagerAdapter;
 import com.example.freecode.methodClass.LastPageInfo;
+import com.example.freecode.methodClass.TextCustom;
 
 public class Noob1Fragment1 extends Fragment {
     @Override
@@ -75,6 +79,44 @@ public class Noob1Fragment1 extends Fragment {
                 Log.d("Noob1Activity", "Noob1Fragment1 set lastPage : 1");
             }
         });
+
+        //텍스트 강조
+        TextView des1 = view.findViewById(R.id.des1);
+        TextView des2 = view.findViewById(R.id.des2);
+        TextView des3 = view.findViewById(R.id.des3);
+        TextView des4 = view.findViewById(R.id.des4);
+
+        String text1 = des1.getText().toString();
+        String text2 = des2.getText().toString();
+        String text3 = des3.getText().toString();
+        String text4 = des4.getText().toString();
+
+        TextCustom textCustom = new TextCustom(des1, text1);
+        textCustom.setPiece("자료형");
+        textCustom.textColor(ContextCompat.getColor(context, R.color.orchid));
+        textCustom.setPiece("int");
+        textCustom.textColor(ContextCompat.getColor(context, R.color.hotPink));
+        textCustom.setPiece("float");
+        textCustom.textColor(ContextCompat.getColor(context, R.color.hotPink));
+        textCustom.setting();
+
+        //코드 주석
+        textCustom = new TextCustom(des2, text2);
+        textCustom.setPiece("#정수(int)");
+        textCustom.textColor(ContextCompat.getColor(context, R.color.brown));
+        textCustom.setPiece("#실수(float)");
+        textCustom.textColor(ContextCompat.getColor(context, R.color.brown));
+        textCustom.setting();
+
+        textCustom =  new TextCustom(des3, text3);
+        textCustom.setPiece("#결과 : 127");
+        textCustom.textColor(ContextCompat.getColor(context, R.color.brown));
+        textCustom.setting();
+
+        textCustom =  new TextCustom(des4, text4);
+        textCustom.setPiece("#결과 : 2748");
+        textCustom.textColor(ContextCompat.getColor(context, R.color.brown));
+        textCustom.setting();
 
         return view;
     }
