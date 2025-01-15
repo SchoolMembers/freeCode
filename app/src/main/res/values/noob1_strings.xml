@@ -53,4 +53,10 @@
     <string name="noob1_page2_table_ex5">4 // 2, 2 // 7 등</string>
     <string name="noob1_page2_table_ex6">14 % 2, 13 % 3 등</string>
     <string name="noob1_page2_table_ex7">2 ** 2, 3 ** 4 등</string>
+
+    //퀴즈
+    <string name="noob1_page3_quiz">
+        초급 - 퀴즈1
+        \n\n39를 5로 나눈 결과는 7.8예요. 이때, 소수점 정수부와 소수부를 각각 분리하기 위해 필요한 연산자를 고르시오.
+    </string>
 </resources>
