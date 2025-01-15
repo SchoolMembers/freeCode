@@ -2,6 +2,8 @@ package com.example.freecode;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.Button;
 import androidx.activity.EdgeToEdge;
 import androidx.activity.OnBackPressedCallback;
@@ -88,5 +90,9 @@ public class Noob1Activity extends AppCompatActivity {
         if (currentItem -1 >= 0) {
             viewPager.setCurrentItem(currentItem - 1, true);
         }
+    }
+
+    public ViewPager2 getViewPager() {
+        return viewPager;
     }
 }

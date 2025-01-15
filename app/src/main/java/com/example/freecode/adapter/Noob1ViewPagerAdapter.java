@@ -24,8 +24,8 @@ public class Noob1ViewPagerAdapter extends FragmentStateAdapter {
         switch (position) {
             case 0:
                 return new Noob1Fragment1();
-//            case 1:
-//                return new Noob1Fragment2();
+            case 1:
+                return new Noob1Fragment2();
             default:
                 throw new IllegalStateException("Unexpected position: " + position);
         }
