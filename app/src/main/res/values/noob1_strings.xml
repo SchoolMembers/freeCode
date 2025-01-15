@@ -44,6 +44,8 @@
         \n\n2 ** 3 #결과: 8
     </string>
     <string name="noob1_page2_des5">나머지가 왜 6이 아닌 3일까?</string>
+    <string name="noob1_page2_des6">"'%'"는 8을 5로 나눈 값의 나머지만 출력하기 때문이에요.
+    \n6은 8을 5로 나눈 값의 소수점 첫째 자리의 숫자를 출력한 거에요!</string>
     <string name="noob1_page2_table_ex1">1 + 2, 3 + 4.1 등</string>
     <string name="noob1_page2_table_ex2">8 - 3, 1.1 - 0.1 등</string>
     <string name="noob1_page2_table_ex3">3 * 5, 4.1 * 5 등</string>
