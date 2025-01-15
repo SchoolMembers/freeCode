@@ -84,6 +84,7 @@
         \n\n\n📌 과부하 방지 및 보안 제한
         \n* 코드 실행 시간이 3초를 초과할 경우 강제 중단됩니다.
         \n* input() 함수는 사용할 수 없습니다.
+        \n* 출력 결과를 보기 위해선 print()를 필수로 사용해야 합니다.
 
         \n\n\n📌 FreeCode에서 제공하는 Python 기능
 
@@ -95,7 +96,7 @@
         \n\nprint(), len(), range(), sum(), abs(), round(), all(), any(), sorted(),
         min(), max(), int(), float(), str(), dict(), set(), list(), tuple(), bool(), zip(),
         enumerate(), pow(), reversed(), filter(), map(), divmod(), chr(), ord(),
-        hex(), bin(), oct()
+        hex(), bin(), oct(), id()
 
         \n\n\n&lt; math 라이브러리 &gt;
         \n! 원래는 import math 를 사용해야 하지만, FreeCode에서는 import math를 하면 오류가 발생합니다. math.pi 처럼 수학 함수를 바로 사용하세요!
