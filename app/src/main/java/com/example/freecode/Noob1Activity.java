@@ -1,9 +1,9 @@
 package com.example.freecode;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Adapter;
-import android.widget.AdapterView;
+import android.widget.ProgressBar;
 import android.widget.Button;
 import androidx.activity.EdgeToEdge;
 import androidx.activity.OnBackPressedCallback;
@@ -21,6 +21,7 @@ public class Noob1Activity extends AppCompatActivity {
     LastPageInfo lastPageInfo;
     ViewPager2 viewPager;
     Noob1ViewPagerAdapter adapter;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,11 @@ public class Noob1Activity extends AppCompatActivity {
         viewPager.setAdapter(adapter);
         viewPager.setCurrentItem(lastPage, false);
         viewPager.setUserInputEnabled(false); // 뷰 페이지 스크롤로 넘기기 비활
+
+//        //진행도 바
+//        progressBar = binding.progressBar;
+//        progressBar.setMax(5);
+//        progressBar.setProgress(viewPager.getCurrentItem());
 
         //뒤로가기 버튼 (시스템)
         getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
@@ -94,5 +100,21 @@ public class Noob1Activity extends AppCompatActivity {
 
     public ViewPager2 getViewPager() {
         return viewPager;
+    }
+
+    @Override
+    public void finish() {
+        // 진행 상태 계산 (현재 페이지 / 전체 페이지 수)
+        int currentProgress = lastPageInfo.getLastPage(this, "Noob1") + 1;
+        int totalItems = adapter.getItemCount();
+        int progressPercentage = (int)(((float) currentProgress / totalItems) * 100);
+
+        // 진행도 메인 액티비티로 전달
+        Intent resultIntent = new Intent();
+        resultIntent.putExtra("source", "Noob1");
+        resultIntent.putExtra("progress", progressPercentage);
+        setResult(RESULT_OK, resultIntent);
+
+        super.finish();
     }
 }
