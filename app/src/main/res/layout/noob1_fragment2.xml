@@ -532,7 +532,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/noob1_page1_des4"
+            android:text="@string/noob1_page2_des6"
             android:textColor="?attr/colorOnPrimary"
             android:textSize="13sp"
             android:textStyle="bold"
