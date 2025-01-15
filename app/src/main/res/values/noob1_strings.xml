@@ -3,7 +3,7 @@
     <string name="noob1_page1_title">자료형 - int, float</string>
     <string name="noob1_page1_des1">
         자료형이란 프로그래밍을 할 때 쓰이는 숫자, 문자열 등의 자료 형태로 사용하는 모든 것을 뜻해요.
-        \n\n먼저, 자료형 중 int를 학습해 볼까요?
+        \n\n먼저, 자료형 중 int와 float을 학습해 볼까요?
         \nint와 float은 우리가 흔히 알고 있는 10, 1.1과 같은 숫자 형태예요.
     </string>
     <string name="noob1_page1_des2">
