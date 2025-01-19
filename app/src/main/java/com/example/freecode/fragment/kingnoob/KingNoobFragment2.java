@@ -24,9 +24,9 @@ public class KingNoobFragment2 extends Fragment {
 
     private boolean isAnimationFinished = false;
     private Button nextButton;
-    Animation anim;
-    LastPageInfo lastPage;
-    Context context;
+    private Animation anim;
+    private LastPageInfo lastPage;
+    private Context context;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
