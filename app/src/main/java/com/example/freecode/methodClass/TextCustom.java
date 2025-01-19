@@ -1,15 +1,19 @@
 package com.example.freecode.methodClass;
 
+import android.graphics.Typeface;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.BackgroundColorSpan;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.RelativeSizeSpan;
+import android.text.style.StrikethroughSpan;
 import android.text.style.StyleSpan;
+import android.text.style.UnderlineSpan;
 import android.widget.TextView;
 
 public class TextCustom {
     //메서드명에 All붙은 애들은 해당 문자 조각과 동일한 모든 텍스트가 바뀐다는 뜻
+    //Count는 count개까지만 적용한다는거
 
     private TextView view = null;
     private final String text;
@@ -169,4 +173,93 @@ public class TextCustom {
         }
     }
 
+    //글자 조각 폰트 다르게 적용
+    public void font(Typeface customTypeface) {
+        int start = text.indexOf(piece);
+        if (start >= 0) {
+            int end = piece.length() + start;
+            span.setSpan(new CustomTypefaceSpan(customTypeface), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        }
+    }
+    public void fontAll(Typeface customTypeface) {
+        int start = text.indexOf(piece);
+        while (start >= 0) {
+            int end = start + piece.length();
+            span.setSpan(new CustomTypefaceSpan(customTypeface), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            start = text.indexOf(piece, end);
+        }
+    }
+    public void fontCountTypeface(Typeface customTypeface, int count) {
+        int start = text.indexOf(piece);
+        int stop = 0;
+        while (start >= 0) {
+            int end = start + piece.length();
+            span.setSpan(new CustomTypefaceSpan(customTypeface), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            start = text.indexOf(piece, end);
+            stop += 1;
+            if (stop >= count) {
+                return;
+            }
+        }
+    }
+
+    //글자 조각 밑줄 적용
+    public void underline() {
+        int start = text.indexOf(piece);
+        if (start >= 0) {
+            int end = start + piece.length();
+            span.setSpan(new UnderlineSpan(), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        }
+    }
+    public void underlineAll() {
+        int start = text.indexOf(piece);
+        while (start >= 0) {
+            int end = start + piece.length();
+            span.setSpan(new UnderlineSpan(), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            start = text.indexOf(piece, end);
+        }
+    }
+    public void underlineCount(int count) {
+        int start = text.indexOf(piece);
+        int stop = 0;
+        while (start >= 0) {
+            int end = start + piece.length();
+            span.setSpan(new UnderlineSpan(), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            start = text.indexOf(piece, end);
+            stop += 1;
+            if (stop >= count) {
+                return;
+            }
+        }
+    }
+
+    //글자 조각 취소선
+    public void strike() {
+        int start = text.indexOf(piece);
+        if (start >= 0) {
+            int end = start + piece.length();
+            span.setSpan(new StrikethroughSpan(), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        }
+    }
+    public void strikeAll() {
+        int start = text.indexOf(piece);
+        while (start >= 0) {
+            int end = start + piece.length();
+            span.setSpan(new StrikethroughSpan(), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            start = text.indexOf(piece, end);
+        }
+    }
+    public void strikeCount(int count) {
+        int start = text.indexOf(piece);
+        int stop = 0;
+        while (start >= 0) {
+            int end = start + piece.length();
+            span.setSpan(new StrikethroughSpan(), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            start = text.indexOf(piece, end);
+            stop += 1;
+            if (stop >= count) {
+                return;
+            }
+        }
+    }
 }
