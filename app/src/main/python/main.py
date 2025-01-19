@@ -71,6 +71,7 @@ def eval(code):
         "hex": hex,
         "bin": bin,
         "oct": oct,
+        "id":id,
         "__build_class__": __build_class__
     }
 

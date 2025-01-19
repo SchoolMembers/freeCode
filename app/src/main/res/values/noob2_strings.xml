@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="noob2_page1_title">객체 이해하기</string>
+    <string name="noob2_page1_des1">
+        ! 메모리 (Memory)
+        \n\n컴퓨터가 데이터를 저장하는 공간.
+        \n\n\n! 객체 (Object)
+        \n\n파이썬에서 사용하는 모든 데이터의 실제 모습.
+        \n리스트, 숫자, 문자 등 파이썬의 모든 것이 객체예요.
+        \n\n\n쉽게 비유하자면, 객체는 1, 3, "문자열", 함수 등 모든 요소들을 말하며 메모리는 객체를 담는 상자예요.
+        \n\n만약 a = 1 라는 코드가 있다면, 1이라는 숫자 객체는 메모리(상자)의 어딘가에 저장되고, 변수 a는 객체 1의 메모리 주소(상자 위치)를 참조(기억) 해요.
+
+        \n\n\nTip💡 그림의 각 부분을 클릭해 보세요!
+    </string>
+    <string name="noob2_page1_des2">
+        초급2 챕터의 후반부에 이 페이지와 관련된 내용이 나오니 꼭 기억해두세요!
+    </string>
+    <string name="noob2_page1_des3">
+        참조(reference)란?
+    </string>
+    <string name="noob2_page1_des4">
+        변수가 데이터를 직접 저장하는 대신, 메모리 어딘가에 저장된 객체를 가리킨다는 뜻.
+        \n\n예시: 변수 a는 객체 1의 메모리 주소를 가리키고 있다.
+    </string>
+    <string name="noob2_page1_image1">
+        객체가 저장될 수 있는 메모리 공간
+    </string>
+    <string name="noob2_page1_image2">
+        숫자 1 객체가 메모리에 생성
+    </string>
+    <string name="noob2_page1_image3">
+        변수 a가 메모리 주소 1234를 참조 중
+    </string>
+    <string name="noob2_page1_image4">
+        메모리 주소를 저장하는 변수 a 선언
+    </string>
+
+    <string name="noob2_page2_title">자료형 - tuple</string>
+    <string name="noob2_page2_des1">
+        튜플(tuple)은 리스트와 비슷하지만 수정을 할 수 없다는 점에서 달라요!
+        \n\n튜플은 한 번 생성되면 그 값을 절대 바꿀 수 없어요.
+        \n\n수정을 할 수 없어서 리스트보다 불편하다고 생각할 수 있지만,
+        안전성이 중요한 데이터를 저장할 때 주로 사용해요.
+        \n\n예를 들어, [\"월\",\"화\",\"수\",\"목\",\"금\",\"토\",\"일\"] 같은 요일 리스트가 있다면, 실수로 요일 값을 변경할 위험이 있어요.
+        \n\n바뀌면 안될 데이터가 변경될 위험을 방지하기 위해선, 데이터를 튜플로 선언하는 것이 좋아요!
+        \n\n튜플로 선언하면 값이 바뀔 일이 없으니 데이터를 안전하게 다룰 수 있기 때문이에요.
+
+        \n\n\n&lt; 다양한 선언 방법 &gt;
+    </string>
+    <string name="noob2_page2_des2">
+        #비어있는 튜플 생성
+        \nt1 = ()
+        \n\n#요소가 하나인 튜플 생성
+        \nt2 = (1, )
+        \n\n#요소가 두 개 이상인 튜플 생성
+        \nt3 = (1, 2, 3)
+        \nt4 = 1, 2, 3
+        \n\n#중첩 튜플
+        \nt5 = (\'a\', \'b\', (\'ab\', \'cd\'))
+    </string>
+    <string name="noob2_page2_des3">
+        t2로 선언된 튜플을 보면, 왜 (1, ) 이런 형태로 값을 선언했나 궁금하실 거예요.
+        \n\n만약 t2 = 1 또는 t2 = (1)로 선언하면, 파이썬은 이를 정수형(int)으로 받아들여요.
+        \n\n그렇기에 튜플로 인식되기 위해선 반드시 쉼표(,)를 붙여서 변수명 = (1, ) 형태로 선언해 주어야 해요.
+
+        \n\n\n튜플을 다루는 방식은 리스트와 유사해요!
+    </string>
+    <string name="noob2_page2_des4">
+        t1 = (1, 2, \'three\', \'four\')
+        \nt2 = (3, 4)
+        \n\n#인덱싱
+        \nt1[0]
+        \n#결과: 1
+        \n\n#슬라이싱
+        \nt1[2:]
+        \n#결과: (\'three\', \'four\')
+        \n\n#튜플 더하기
+        \nt3 = t1 + t2
+        \nprint(t3)
+        \n#결과: (1, 2, \'three\', \'four\', 3, 4)
+        \n\n#튜플 곱하기
+        \nt3 = t2 * 2
+        \nprint(t3)
+        \n#결과: (3, 4, 3, 4)
+        \n\n#튜플 길이
+        \nlen(t1)
+        \n#결과: 4
+    </string>
+    <string name="noob2_page2_des5">
+        🚨 주의!
+        \n\n튜플 더하기, 곱하기의 경우엔 튜플의 값을 변경하는 것이 아닌, t3(으)로 새로운 튜플을 생성하여 결과를 저장한 것이기 때문에 오류가 생기지 않습니다!
+    </string>
+</resources>
