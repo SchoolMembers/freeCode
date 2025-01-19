@@ -5,6 +5,7 @@ import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ScrollView;
@@ -21,6 +22,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.freecode.databinding.ActivityMainBinding;
+import com.example.freecode.methodClass.CardViews;
 import com.example.freecode.methodClass.LastPageInfo;
 import com.example.freecode.methodClass.NvgListener;
 import com.google.android.material.card.MaterialCardView;
@@ -37,7 +39,8 @@ public class MainActivity extends AppCompatActivity {
     //checkInit 값이 0일 때는 menu gone, 1일 때는 visible
     public static int checkInit = 0;
 
-    private List<MaterialCardView> cardViews = new ArrayList<>();
+    //카드 뷰 바인딩 리스트
+    private final List<CardViews> cardViews = new ArrayList<>();
 
     ActivityResultLauncher<Intent> activityLauncher;
 
@@ -119,17 +122,25 @@ public class MainActivity extends AppCompatActivity {
         // 메뉴 바 아이템 선택 리스너 설정
         navRail.setOnItemSelectedListener(item -> NvgListener.itemSelected(this, item.getItemId()));
 
-        //진행도 세팅
-        TextView progressKing =  binding.progressKingNoob;
-        TextView progressNoob1 = binding.progressNoob1;
+        //카드 뷰 세팅
+        cardViews.add(new CardViews(binding.kingNoob, binding.progressKingNoob, 0, this));
+        cardViews.add(new CardViews(binding.noob1, binding.progressNoob1, 1, this));
+        cardViews.add(new CardViews(binding.noob2, binding.progressNoob2, 2, this));
 
-        int lastPageKing = new LastPageInfo().getLastPage(this, "King") + 1;
-        if (lastPageKing < 0) {
-            lastPageKing = 0;
+        //챕터 선택
+        for (int i = 0; i < cardViews.size(); i++) {
+            int index = i;
+            cardViews.get(i).getCardView().setOnClickListener(v -> {
+                handleCardClick(index);
+            });
         }
-        int progressPer = (int)(((float) lastPageKing / 7) * 100);
-        progressKing.setText(String.format(Locale.getDefault(), "진행도 %d%%", progressPer));
 
+
+        //진행도 세팅 - 초기화
+        setProgressText(cardViews.size());
+
+
+        //진행도 세팅 - 챕터에서 메인으로 돌아올 때
         activityLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
                 result -> {
@@ -141,28 +152,28 @@ public class MainActivity extends AppCompatActivity {
                             int progressPercentage = data.getIntExtra("progress", 0);
 
                             if ("KingNoob".equals(source)) {
-                                progressKing.setText(String.format(Locale.getDefault(), "진행도 %d%%", progressPercentage));
-                            } else if ("Noob".equals(source)) {
-                                progressNoob1.setText(String.format(Locale.getDefault(), "진행도 %d%%", progressPercentage));
+                                cardViews.get(0).getTextView().setText(String.format(Locale.getDefault(), "진행도 %d%%", progressPercentage));
+                            } else if ("Noob1".equals(source)) {
+                                cardViews.get(1).getTextView().setText(String.format(Locale.getDefault(), "진행도 %d%%", progressPercentage));
+                            } else if ("Noob2".equals(source)) {
+                                cardViews.get(2).getTextView().setText(String.format(Locale.getDefault(), "진행도 %d%%", progressPercentage));
                             }
                         }
                     }
                 }
         );
 
-        //챕터 선택
-        cardViews.add(binding.kingNoob);
-        cardViews.add(binding.noob1);
-
-        for (int i = 0; i < cardViews.size(); i++) {
-            int index = i;
-            cardViews.get(i).setOnClickListener(v -> {
-                handleCardClick(index);
-            });
-        }
-
     }
 
+    //진행도 초기화 함수
+    private void setProgressText(int count) {
+        for (int i=0; i<count; i++) {
+            cardViews.get(i).setProgressText();
+        }
+    }
+
+
+    //카드 뷰 클릭 인텐트 액티비티
     private void handleCardClick(int index) {
         Intent intent;
         ActivityOptionsCompat options = ActivityOptionsCompat.makeCustomAnimation(this, 0, 0);
@@ -174,6 +185,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case 1:
                 intent = new Intent(this, Noob1Activity.class);
+                activityLauncher.launch(intent, options);
+                break;
+            case 2:
+                intent = new Intent(this, Noob2Activity.class);
                 activityLauncher.launch(intent, options);
                 break;
             default:
