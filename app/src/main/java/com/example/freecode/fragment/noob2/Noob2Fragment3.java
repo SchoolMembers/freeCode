@@ -18,6 +18,7 @@ import com.example.freecode.Noob2Activity;
 import com.example.freecode.R;
 import com.example.freecode.adapter.Noob2ViewPagerAdapter;
 import com.example.freecode.methodClass.LastPageInfo;
+import com.example.freecode.methodClass.TextCustom;
 
 import java.util.ArrayList;
 
@@ -76,6 +77,29 @@ public class Noob2Fragment3 extends Fragment {
 
         //이전 버튼 리스너
         beforeButton.setOnClickListener(v -> activity.moveToBeforePage());
+
+        //텍스트 커스텀
+        TextView textView = view.findViewById(R.id.q1);
+        String text = textView.getText().toString();
+        TextCustom textCustom = new TextCustom(textView, text);
+        textCustom.setPiece("초급1");
+        textCustom.size(1.3f);
+        textCustom.setting();
+
+        textView = view.findViewById(R.id.example);
+        text = textView.getText().toString();
+        textCustom = new TextCustom(textView, text);
+        textCustom.setPiece("----line 1");
+        textCustom.textColor(ContextCompat.getColor(context, R.color.darkGreen));
+        textCustom.setPiece("----line 2");
+        textCustom.textColor(ContextCompat.getColor(context, R.color.darkGreen));
+        textCustom.setPiece("----line 3");
+        textCustom.textColor(ContextCompat.getColor(context, R.color.darkGreen));
+        textCustom.setPiece("----line 4");
+        textCustom.textColor(ContextCompat.getColor(context, R.color.darkGreen));
+        textCustom.setPiece("----line 5");
+        textCustom.textColor(ContextCompat.getColor(context, R.color.darkGreen));
+        textCustom.setting();
 
         //퀴즈
         LinearLayout choice1 = view.findViewById(R.id.choice1);
