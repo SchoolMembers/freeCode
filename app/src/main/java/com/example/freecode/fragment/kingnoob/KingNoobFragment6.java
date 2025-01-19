@@ -31,27 +31,27 @@ public class KingNoobFragment6 extends Fragment {
     // Page 5
 
     private Button finishButton;
-    LastPageInfo lastPage;
-    Context context;
+    private LastPageInfo lastPage;
+    private Context context;
     boolean checkLast;
-    TextView completeInfo;
+    private TextView completeInfo;
 
     private int choice = 0;
-    ArrayList<TextView> answerList = new ArrayList<>();
-    ArrayList<TextView> answerTextList = new ArrayList<>();
-    TextView choiceView = null;
+    private final ArrayList<TextView> answerList = new ArrayList<>();
+    private final ArrayList<TextView> answerTextList = new ArrayList<>();
+    private TextView choiceView = null;
 
-    ArrayList<TextView> alphabet = new ArrayList<>();
-    ArrayList<String> alphabetString = new ArrayList<>();
-    ArrayList<TextView> results = new ArrayList<>();
-    ArrayList<Integer> resultIndex = new ArrayList<>();
-    int resultCount = 0;
+    private final ArrayList<TextView> alphabet = new ArrayList<>();
+    private final ArrayList<String> alphabetString = new ArrayList<>();
+    private final ArrayList<TextView> results = new ArrayList<>();
+    private final ArrayList<Integer> resultIndex = new ArrayList<>();
+    private int resultCount = 0;
 
-    LinearLayout quiz1 = null;
-    LinearLayout quiz2 = null;
-    LinearLayout quiz3 = null;
+    private LinearLayout quiz1 = null;
+    private LinearLayout quiz2 = null;
+    private LinearLayout quiz3 = null;
 
-    View view;
+    private View view;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

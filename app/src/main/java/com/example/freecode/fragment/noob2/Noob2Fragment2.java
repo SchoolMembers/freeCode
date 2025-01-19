@@ -25,9 +25,9 @@ public class Noob2Fragment2 extends Fragment {
 
     private boolean isAnimationFinished = false;
     private Button nextButton;
-    Animation anim;
-    LastPageInfo lastPage;
-    Context context;
+    private Animation anim;
+    private LastPageInfo lastPage;
+    private Context context;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -119,6 +119,18 @@ public class Noob2Fragment2 extends Fragment {
         textCustom.setPiece("#요소가 두 개 이상인 튜플 생성");
         textCustom.textColor(ContextCompat.getColor(context, R.color.darkBlue));
         textCustom.setPiece("#중첩 튜플");
+        textCustom.textColor(ContextCompat.getColor(context, R.color.darkBlue));
+        textCustom.setPiece("#tuple() 내장 함수");
+        textCustom.textColor(ContextCompat.getColor(context, R.color.darkBlue));
+        textCustom.setPiece("#빈 튜플 생성");
+        textCustom.textColor(ContextCompat.getColor(context, R.color.darkBlue));
+        textCustom.setPiece("#리스트를 튜플로 변환");
+        textCustom.textColor(ContextCompat.getColor(context, R.color.darkBlue));
+        textCustom.setPiece("#결과: (1, 2, 3)");
+        textCustom.textColor(ContextCompat.getColor(context, R.color.darkBlue));
+        textCustom.setPiece("#문자열을 튜플로 변환");
+        textCustom.textColor(ContextCompat.getColor(context, R.color.darkBlue));
+        textCustom.setPiece("#결과: ('h', 'i')");
         textCustom.textColor(ContextCompat.getColor(context, R.color.darkBlue));
         textCustom.setting();
 
