@@ -101,4 +101,24 @@
         \n\n🚨 주의!
         \n\n튜플 더하기, 곱하기의 경우엔 튜플의 값을 변경하는 것이 아닌, t3(으)로 새로운 튜플을 생성하여 결과를 저장한 것이기 때문에 오류가 생기지 않습니다!
     </string>
+
+    <string name="quiz_noob2_question1">
+        초급1 - 퀴즈1
+
+        \n\n아래의 코드에서 에러(오류)가 발생하는 라인을 모두 선택하세요!
+    </string>
+    <string name="quiz_noob2_question1_ex">
+        t = 1, 2, 3, 4
+        \n\nprint(t[4]) ----line 1
+        \nt.append(5) ----line 2
+        \nprint(type(t)) ----line 3
+        \nt2 = t + (5, 6) ----line 4
+        \nt2[0] = 10 ----line 5
+    </string>
+    <!-- 정답: 1, 2, 5-->
+    <string name="quiz_noob2_question1_answer1">line 1</string>
+    <string name="quiz_noob2_question1_answer2">line 2</string>
+    <string name="quiz_noob2_question1_answer3">line 3</string>
+    <string name="quiz_noob2_question1_answer4">line 4</string>
+    <string name="quiz_noob2_question1_answer5">line 5</string>
 </resources>
