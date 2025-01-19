@@ -452,7 +452,6 @@
                 android:orientation="horizontal"
                 android:layout_marginStart="1dp"
                 android:layout_marginEnd="1dp"
-                android:layout_marginBottom="1dp"
                 android:background="@color/veryLightOrange">
                 <TextView
                     android:layout_width="0dp"
