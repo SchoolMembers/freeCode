@@ -55,10 +55,10 @@ public class Noob1Activity extends AppCompatActivity {
         viewPager.setCurrentItem(lastPage, false);
         viewPager.setUserInputEnabled(false); // 뷰 페이지 스크롤로 넘기기 비활
 
-//        //진행도 바
-//        progressBar = binding.progressBar;
-//        progressBar.setMax(5);
-//        progressBar.setProgress(viewPager.getCurrentItem());
+        //진행도 바
+        progressBar = binding.progressBar;
+        progressBar.setMax(5);
+        progressBar.setProgress(viewPager.getCurrentItem());
 
         //뒤로가기 버튼 (시스템)
         getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
